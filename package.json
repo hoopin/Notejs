@@ -1,0 +1,19 @@
+{
+  "name": "notejs",
+  "version": "1.0.0",
+  "description": "Notejs is the premier note taking app for developers.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Notesjs/Notejs.git"
+  },
+  "author": "Michael Mitrakos, Chris Phan, Mike Yang, David Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Notesjs/Notejs/issues"
+  },
+  "homepage": "https://github.com/Notesjs/Notejs#readme"
+}
