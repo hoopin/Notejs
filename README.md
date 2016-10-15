@@ -61,10 +61,10 @@ Sometimes your API call will generate an error. Every response to an API call th
 
 
 ## Team:
-- [Michel Mitrakos](https://www.michaelmitrakos.com) - Full-Stack
-- David Kim
-- Chris Phan
-- Mike Yang
+- [Michael Mitrakos](https://www.michaelmitrakos.com) - Full-stack
+- [David Kim](https://github.com/davidkim310) - Full-stack
+- [Chris Phan](https://github.com/micyang) - Full-stack
+- [Mike Yang](https://github.com/cpp6d) - Full-stack
 
 
 ## Built With:
@@ -72,7 +72,7 @@ Sometimes your API call will generate an error. Every response to an API call th
 | ------------ |:------------:| :---------------|:--------------------|
 | React        | Node JS      | Babel           | Mocha               |
 | Redux        | Express      | BodyParser      | Chai                |
-| Webpack      | Mongo Db     | Morgan          |                     |
+| Webpack      | SQL          | Morgan          |                     |
 |              |              | Mongoose        |                     |
 |              |              | Request         |                     |
 |              |              | Bcrypt          |                     |
