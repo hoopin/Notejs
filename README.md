@@ -61,19 +61,17 @@ Sometimes your API call will generate an error. Every response to an API call th
 
 
 ## Team:
-- [Michel Mitrakos](https://www.michaelmitrakos.com) - Full-Stack
-- David Kim
-- Chris Phan
-- Mike Yang
+- [Michel Mitrakos](https://www.michaelmitrakos.com) - Scrum Master & Full-Stack Engineer
+- [Mike Yang](https://github.com/micyang) - Product Lead & Full-Stack Engineer
+- [David Kim](https://github.com/davidkim310) - Full-Stack Engineer
+- [Chris Phan](https://github.com/cpp6d) - Full-Stack Engineer
 
 
 ## Built With:
-| Front-End    | Back-End     | Modules         | Testing Frameworks  |
-| ------------ |:------------:| :---------------|:--------------------|
-| React        | Node JS      | Babel           | Mocha               |
-| Redux        | Express      | BodyParser      | Chai                |
-| Webpack      | Mongo Db     | Morgan          |                     |
-|              |              | Mongoose        |                     |
-|              |              | Request         |                     |
-|              |              | Bcrypt          |                     |
-|              |              | Express-session |                     |
+| Front-End      | Back-End     | Modules         | Testing Frameworks  |
+| -------------- |:------------:| :---------------|:--------------------|
+| React          | Node JS      | Babel           | Mocha               |
+| Redux          | Express      | BodyParser      | Chai                |
+| Webpack        | Mongo Db     | Morgan          |                     |
+| React Material |              | SQL             |                     |
+|                |              | Request         |                     |
