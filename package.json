@@ -4,6 +4,7 @@
   "description": "Notejs is the premier note taking app for developers.",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,18 +18,23 @@
   },
   "homepage": "https://github.com/Notesjs/Notejs#readme",
   "dependencies": {
-    "angular": "^1.5.8",
-    "angular-material": "^1.1.1",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "dotenv": "^2.0.0",
+    "eslint": "^3.7.1",
     "express": "^4.14.0",
     "lodash": "^4.16.4",
     "moment": "^2.15.1",
-    "mongodb": "^2.2.10",
-    "mongoose": "^4.6.3",
     "morgan": "^1.7.0",
     "nodemon": "^1.11.0",
+    "path": "^0.12.7",
     "request": "^2.75.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.0",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1"
   }
 }
