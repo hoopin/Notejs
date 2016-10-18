@@ -6,7 +6,7 @@ var Notes = sequelize.define('notes', {
     type: Sequelize.STRING
   },
   content: {
-    type: Sequelize.string
+    type: Sequelize.STRING
   }
 }, {
   freezeTableName: true // Model tableName will be the same as the model name
