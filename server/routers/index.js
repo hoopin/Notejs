@@ -1,10 +1,10 @@
 const Router = require('express').Router()
-const folders = require('./folders')
-const auth = require('./auth')
-const notes = require('./notes')
+const folders = require('./folderRouter')
+const users = require('./userRouter')
+const notes = require('./noteRouter')
 
 Router.use('/folders', folders)
-Router.use('/auth', auth)
+Router.use('/users', users)
 Router.use('/notes', notes)
 
 module.exports = Router
