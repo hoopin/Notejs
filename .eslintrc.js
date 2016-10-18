@@ -1,7 +1,7 @@
 module.exports = {
     "env": {
-        "browser": true,
-        "es6": true
+        "es6": true,
+        "node": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
@@ -48,9 +48,10 @@ module.exports = {
                 "allowKeywords": true
             }
         ],
-        "eol-last": "error",
+        "eol-last": "off",
         "eqeqeq": "error",
         "func-call-spacing": "error",
+        "func-name-matching": "error",
         "func-names": "error",
         "func-style": "error",
         "generator-star-spacing": "error",
@@ -73,7 +74,7 @@ module.exports = {
         "lines-around-comment": "error",
         "lines-around-directive": "error",
         "max-depth": "error",
-        "max-len": "error",
+        "max-len": "off",
         "max-lines": "error",
         "max-nested-callbacks": "error",
         "max-params": "error",
@@ -122,7 +123,7 @@ module.exports = {
         "no-mixed-requires": "error",
         "no-multi-spaces": "error",
         "no-multi-str": "error",
-        "no-multiple-empty-lines": "error",
+        "no-multiple-empty-lines": "off",
         "no-negated-condition": "error",
         "no-nested-ternary": "error",
         "no-new": "error",
