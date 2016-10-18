@@ -1,1 +1,3 @@
-// userModel.js
+const userModel = {}
+
+module.exports = userModel
