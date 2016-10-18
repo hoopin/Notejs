@@ -1,6 +1,6 @@
-const Router = require('express').Router
+const folderRouter = require('express').Router
 
-Router.route('/folders')
+folderRouter.route('/folders')
   .get((req, res) => {
     console.log('GET /folders')
   })
@@ -8,7 +8,7 @@ Router.route('/folders')
     console.log('POST /folders')
   })
 
-Router.route('/folders/:folderId')
+folderRouter.route('/folders/:folderId')
   // get specific oflder and it contains notes
   .get((req, res) => {
     console.log('GET /folders:folderId')
@@ -18,4 +18,4 @@ Router.route('/folders/:folderId')
     console.log('POST /folders:folderId')
   })
 
-module.exports = Router
+module.exports = folderRouter

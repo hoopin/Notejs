@@ -1,13 +1,13 @@
-const Router = require('express').Router
+const authRouter = require('express').Router
 
-Router.route('/signup')
+authRouter.route('/signup')
   .post((req, res) => {
     console.log('Signup in route')
   })
 
-Router.route('/signin')
+authRouter.route('/signin')
 .post((req, res) => {
   console.log('Sign in route')
 })
 
-module.exports
+module.exports = authRouter
