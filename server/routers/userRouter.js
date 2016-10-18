@@ -1,6 +1,7 @@
 const userRouter = require('express').Router()
 
 userRouter.route('/signup')
+  // Signs up a user
   .post((req, res) => {
     console.log('/signup POST')
     res.status(200).json({
@@ -9,6 +10,7 @@ userRouter.route('/signup')
   })
 
 userRouter.route('/signin')
+  // Signs in a user
   .post((req, res) => {
     console.log('/signin POST')
     res.status(200).json({

@@ -1,6 +1,7 @@
 const folderRouter = require('express').Router()
 
 folderRouter.route('/')
+  // gets folders for a specific user
   .get((req, res) => {
     console.log('GET /folders')
     res.status(200).json({
@@ -8,6 +9,7 @@ folderRouter.route('/')
     })
   })
   .post((req, res) => {
+    // Creates a new folder
     console.log('POST /folders')
     res.status(200).json({
       message: '/folders POST'
