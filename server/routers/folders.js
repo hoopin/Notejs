@@ -1,4 +1,4 @@
-const folderRouter = require('express').Router
+const folderRouter = require('express').Router()
 
 folderRouter.route('/folders')
   .get((req, res) => {

@@ -1,4 +1,4 @@
-const authRouter = require('express').Router
+const authRouter = require('express').Router()
 
 authRouter.route('/signup')
   .post((req, res) => {
