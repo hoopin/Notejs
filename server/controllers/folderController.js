@@ -1,19 +1,33 @@
 const folderController = {}
+const Folders = require('../models/folder')
+const Promise = require('co')
 
 // gets folders for a specific user
 folderController.GET = (req, res) => {
   console.log('GET /folders')
-  res.status(200).json({
-    message: '/folders GET'
-  })
+
+  console.log('folders', Folders.getFolders())
+  Folders.getFolders()
+    .then(function (data) {
+      console.log('data inside folder controller', data)
+      res.status(200).send(data)
+    })
 }
 
 // Creates new folder for a user
 folderController.POST = (req, res) => {
   console.log('POST /folders')
-  res.status(200).json({
-    message: '/folders POST'
+  const data = req.body
+  Promise(function * () {
+    Folders.addFolder(data.folderName, data.notesInside)
   })
+    .then(data => {
+      console.log('folder created!', data)
+      res.status(200).send(data)
+    })
+    .catch(err => {
+      console.log('folder not created', err)
+    })
 }
 
 // get specific oflder and it contains notes
