@@ -2,22 +2,22 @@ import axios from 'axios'
 
 // TODO: if you think that some actions are needed or not needed
 // notify the slack group so we can discuss
-export const UPDATE_NOTE = 'UPDATE_NOTE'
-export const UPDATE_FOLDER = 'UPDATE_FOLDER'
+export const FETCH_ALL = 'FETCH_ALL'
+export const DELETE_ALL = 'DELETE_ALL'
 
 // TODO: update axios requests with backend endpoints
-export function updateNote () {
+export function fetchAll () {
   const request = axios.get(``)
   return {
-    type: UPDATE_NOTE,
+    type: FETCH_ALL,
     payload: request
   }
 }
 
-export function updateFolder () {
+export function deleteAll () {
   const request = axios.get(``)
   return {
-    type: UPDATE_FOLDER,
+    type: DELETE_ALL,
     payload: request
   }
 }
