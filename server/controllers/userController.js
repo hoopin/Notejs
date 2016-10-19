@@ -1,18 +1,29 @@
+const User = require('../models/user')
 const userController = {}
 
 // Sign in user
 userController.SIGNIN = (req, res) => {
-  console.log('POST /signin')
   res.status(200).json({
-    message: '/signin POST'
+    message: 'Successfully signed in user.',
+    user: req.body,
+    session: req.session
   })
 }
 
 // Create a new user
 userController.SIGNUP = (req, res) => {
-  console.log('POST /signup')
+  User.register(req.body)
+
   res.status(200).json({
-    message: '/signup POST'
+    message: 'Successfully registered user.',
+    user: req.body
+  })
+}
+
+// logout user
+userController.LOGOUT = (req, res) => {
+  res.status(200).json({
+    message: 'Successfully logged out user.'
   })
 }
 
