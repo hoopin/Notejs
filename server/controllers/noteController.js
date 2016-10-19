@@ -1,10 +1,24 @@
 const noteController = {}
+const Notes = require('../models/note')
+const Promise = require('co')
 
 // Creates new note
 noteController.POST = (req, res) => {
   console.log('POST /notes')
-  res.status(200).json({
-    message: '/notes POST'
+  const input = req.body 
+  Promise(function * () {
+    Notes.addNote(input.name , input.container)
+  })
+    .then(note => {
+      // This is trying to get inner Join to Work
+      if(input.folderId){
+        note.addNotesFolders(input.folderId)
+        .then(()=>{
+          console.log('Jane this should Work')
+        })
+      }else{
+      res.status(200).send(data)
+    }
   })
 }
 
@@ -20,8 +34,12 @@ noteController.GET_NOTEID = (req, res) => {
 // Save a note
 noteController.POST_NOTEID = (req, res) => {
   console.log('POST /notes/:noteId')
-  res.status(200).json({
-    message: '/notes/:noteId POST'
+  const Note = req.body
+  Promise(function * () {
+    Notes.saveNotes(updatedNote)
+  })
+  .then(()=>{
+    console.log('You have updaed the note')
   })
 }
 
