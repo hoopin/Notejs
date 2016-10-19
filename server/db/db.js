@@ -35,10 +35,13 @@ const Notes = sequelize.define('notes', {
 })
 
 const Users = sequelize.define('users', {
-  userName: {
+  firstName: {
     type: Sequelize.STRING
   },
-  fullName: {
+  lastName: {
+    type: Sequelize.STRING
+  },
+  email: {
     type: Sequelize.STRING
   },
   password: {
@@ -78,4 +81,11 @@ sequelize.sync().then(function () {
   console.log('Tables have been Created')
 })
 
-module.exports = {Folders: Folders,Users: Users,Notes: Notes,sequelize: sequelize}
+module.exports = {
+  Folders: Folders,
+  Users: Users,
+  Notes: Notes,
+  NotesUsers: NotesUsers,
+  NotesFolders: NotesFolders,
+  FoldersUsers: FoldersUsers
+}

@@ -8,19 +8,19 @@ let register = (user) => {
       return result
     })
     .catch((err) => {
-      res.err(err)
+      console.err(err)
     })
 }
 
 let verifyPassword = (req, res, next) => {
   Users.findOne({
-    'email': req.body.email
+    where: {'email': req.body.email}
   })
   .then((result) => {
     bcrypt.compare(req.body.password, result.password, (err, response) => {
       if (err) {
-        res.err(err)
-      } else if (response) {
+        res.status(500).send(err)
+      } else if (response !== null) {
         next()
       } else {
         res.status(400).send('Invalid email or password')
@@ -28,7 +28,7 @@ let verifyPassword = (req, res, next) => {
     })
   })
   .catch((err) => {
-    res.err(err)
+    res.status(500).send(err)
   })
 }
 
@@ -36,7 +36,7 @@ let createToken = (req, res, next) => {
   // This function adds a token onto the user's session
   req.session.regenerate((err) => {
     if (err) {
-      res.err(err)
+      res.status(500).send(err)
     } else {
       req.session.user = {
         'email': req.body.email
@@ -59,7 +59,7 @@ let destroyToken = (req, res, next) => {
   // This function destroys the user's session
   req.session.destroy(function (err) {
     if (err) {
-      res.err(err)
+      res.status(500).send(err)
     } else {
       next()
     }
@@ -81,7 +81,7 @@ let hashPassword = (req, res, next) => {
 let verifyEmail = (req, res, next) => {
   // This function accepts an email and makes sure it's unique
   Users.findOne({
-    'email': req.body.email
+    where: {'email': req.body.email}
   })
   .then((result) => {
     if (result !== null) {
@@ -91,7 +91,7 @@ let verifyEmail = (req, res, next) => {
     }
   })
   .catch((err) => {
-    res.err(err)
+    res.status(500).send(err)
   })
 }
 

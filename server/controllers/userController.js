@@ -13,15 +13,11 @@ userController.SIGNIN = (req, res) => {
 // Create a new user
 userController.SIGNUP = (req, res) => {
   User.register(req.body)
-    .then((user) => {
-      res.status(200).json({
-        message: 'Successfully registered user.',
-        user: user
-      })
-    })
-    .catch((err) => {
-      res.status(500).err(err)
-    })
+
+  res.status(200).json({
+    message: 'Successfully registered user.',
+    user: req.body
+  })
 }
 
 // logout user
