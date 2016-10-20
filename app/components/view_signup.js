@@ -1,23 +1,13 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { reduxForm } from 'redux-form'
 import { createUser } from '../actions/action_user'
 import { Link } from 'react-router'
 
 class NewUser extends Component {
-  static contextTypes = {
-    router: PropTypes.object
-  }
-
-  onsubmit (props) {
-    this.props.createUser(props)
-      .then(() => {
-        this.context.router.push('/')
-      })
-  }
   render () {
     const { fields: { firstName, lastName, email, password }, handleSubmit } = this.props
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+      <form onSubmit={handleSubmit(this.props.createUser)}>
         <h3>Sign up</h3>
 
         <div className={`form-group ${firstName.touched && firstName.invalid ? 'has-danger' : ''}`}>

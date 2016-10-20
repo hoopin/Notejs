@@ -3,6 +3,7 @@ import axios from 'axios'
 // TODO: if you think that some actions are needed or not needed
 // notify the slack group so we can discuss
 export const FETCH_FOLDER = 'FETCH_FOLDER'
+export const FETCH_FOLDERS = 'FETCH_FOLDERS'
 export const CREATE_FOLDER = 'CREATE_FOLDER'
 export const DELETE_FOLDER = 'DELETE_FOLDER'
 export const UPDATE_FOLDER = 'UPDATE_FOLDER'
@@ -12,6 +13,14 @@ export function fetchFolder () {
   const request = axios.get(``)
   return {
     type: FETCH_FOLDER,
+    payload: request
+  }
+}
+
+export function fetchFolders () {
+  const request = axios.get(`/api/folders`)
+  return {
+    type: FETCH_FOLDERS,
     payload: request
   }
 }

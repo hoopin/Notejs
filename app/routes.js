@@ -7,7 +7,8 @@ import ViewAllFiles from './components/view_allfiles'
 import ViewNoteIndex from './components/view_note_index'
 import ViewSignIn from './components/view_signin'
 import ViewSignUp from './components/view_signup'
-import ViewHomePage from './component/view_homepage'
+import ViewHomePage from './components/view_homepage'
+import ViewFolders from './components/view_folders'
 
 export default (
   <Route path='/' component={App} >
@@ -17,5 +18,6 @@ export default (
     <Route path='signup' component={ViewSignUp} />
     <Route path='signin' component={ViewSignIn} />
     <Route path='all' component={ViewAllFiles} />
+    <Route path='folders' component={ViewFolders} />
   </Route>
 )
