@@ -54,22 +54,6 @@ const deleteNote = (noteId) => {
     })
 }
 
-const changeNoteName = (updatedName) => {
-  if (updatedName === '') {
-    return 'Bad request. There must be an updatedName and updateMessage.'
-  }
-  return Notes
-    .update({
-      notesName: updatedName
-    })
-    .then(() => {
-      console.log('Notes Name has been Changed')
-    })
-    .catch((err) => {
-      return err
-    })
-}
-
 const updateNote = (noteId, content) => {
   if (noteId === '' || content === '') {
     return 'Bad request. There must be a noteId and content.'
