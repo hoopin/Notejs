@@ -6,20 +6,23 @@ class ViewFolder extends Component {
 
   constructor (props) {
     super(props)
-    this.state = {likesCount: 0}
-    this.onLike = this.onLike.bind(this)
+    this.state = {clicked: false}
+    this.onFolderClick = this.onFolderClick.bind(this)
   }
 
-  onLike () {
-    let newLikesCount = this.state.likesCount + 1
-    this.setState({likesCount: newLikesCount})
+  componentWillMount () {
+    this.props.fetchPost(this.props.params.id)
+  }
+
+  onFolderClick () {
+    this.setState({clicked: true})
   }
 
   render () {
     return (
       <div>
-        Likes : <span>{this.state.likesCount}</span>
-        <div><button onClick={this.onLike}>Like Me</button></div>
+        Folder <span>{this.state.clicked}</span>
+        <div><button onClick={this.onFolderClick}>Like Me</button></div>
       </div>
     )
   }
@@ -27,7 +30,7 @@ class ViewFolder extends Component {
 }
 
 function mapStateToProps (state) {
-  return { post: state.posts.post };
+  return { folder: state.posts.post }
 }
 
 export default connect(mapStateToProps, { fetchFolder })(ViewFolder)

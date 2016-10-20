@@ -1,23 +1,13 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { reduxForm } from 'redux-form'
-import { SignInUser } from '../actions/action_user'
+import { signInUser } from '../actions/action_user'
 import { Link } from 'react-router'
 
 class existingUser extends Component {
-  static contextTypes = {
-    router: PropTypes.object
-  }
-
-  onsubmit (props) {
-    this.props.SignInUser(props)
-      .then(() => {
-        this.context.router.push('/')
-      })
-  }
   render () {
     const { fields: { email, password }, handleSubmit } = this.props
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+      <form onSubmit={handleSubmit(this.props.signInUser)}>
         <h3>Sign In</h3>
 
         <div className={`form-group ${email.touched && email.invalid ? 'has-danger' : ''}`}>
@@ -60,4 +50,4 @@ export default reduxForm({
   form: 'ExistingUserForm',
   fields: ['email', 'password'],
   validate
-}, null, { SignInUser })(existingUser)
+}, null, { signInUser })(existingUser)
