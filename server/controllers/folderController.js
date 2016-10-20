@@ -8,7 +8,7 @@ folderController.GET = (req, res) => {
 
   console.log('folders', Folders.getFolders())
   Folders.getFolders()
-    .then(function (data) {
+    .then((data) => {
       console.log('data inside folder controller', data)
       res.status(200).send(data)
     })

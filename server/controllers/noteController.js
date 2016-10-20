@@ -28,10 +28,10 @@ noteController.GET_NOTEID = (req, res) => {
 noteController.POST_NOTEID = (req, res) => {
   console.log('POST /notes/:noteId')
   const Note = req.body
-  Promise(function * () {
+  Promise(function* () {
     Notes.saveNotes(updatedNote)
   })
-  .then(()=>{
+  .then(() => {
     console.log('You have updaed the note')
   })
 }
