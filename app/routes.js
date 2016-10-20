@@ -14,7 +14,7 @@ export default (
   <Route path='/' component={App} >
     <IndexRoute component={ViewHomePage} />
     <Route path='note/:id' component={ViewNoteIndex} />
-    <Route path='folder/:id' component={ViewFolder} />
+    <Route path='folders/:id' component={ViewFolder} />
     <Route path='signup' component={ViewSignUp} />
     <Route path='signin' component={ViewSignIn} />
     <Route path='all' component={ViewAllFiles} />
