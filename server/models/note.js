@@ -2,7 +2,7 @@ const Notes = require('../db/db').Notes
 const Folders = require('../db/db').Folders
 
 const addNote = (noteName, content) => {
-  
+
   Notes
     .build({notesName: noteName, content: content})
     .save()
