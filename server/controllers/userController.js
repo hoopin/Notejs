@@ -13,11 +13,9 @@ userController.SIGNIN = (req, res) => {
 // Create a new user
 userController.SIGNUP = (req, res) => {
   User.register(req.body)
-
-  res.status(200).json({
-    message: 'Successfully registered user.',
-    user: req.body
-  })
+    .then((user) => {
+      res.status(200).send(user)
+    })
 }
 
 userController.DELETE = (req, res) => {

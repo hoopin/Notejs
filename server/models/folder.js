@@ -29,6 +29,9 @@ const getUserFolders = (userId) => {
     .then(user => {
       return user.getFolders({})
     })
+    .catch((err) => {
+      return err
+    })
 }
 
 const deleteFolder = (folderId) => {
@@ -39,23 +42,26 @@ const deleteFolder = (folderId) => {
       folder.destroy()
     })
     .catch((err) => {
-      console.log('err in removing folder', err)
+      return err
     })
 }
 
 const updateFolderName = (folderId, newName) => {
   return Folders
     .findOne({
-    	where: {
-    		id: folderId
-    	}
+      where: {
+        id: folderId
+      }
     })
     .then(folder => {
       return folder
         .update({
           folderName: newName
         })
-      })
+    })
+    .catch((err) => {
+      return err
+    })
 }
 
 const getFoldersNotes = (folderId) => {
@@ -64,6 +70,9 @@ const getFoldersNotes = (folderId) => {
   })
   .then((folder) => {
     return folder.getNotes({})
+  })
+  .catch((err) => {
+    return err
   })
 }
 

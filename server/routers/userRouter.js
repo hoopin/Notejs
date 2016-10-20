@@ -1,6 +1,6 @@
 const userRouter = require('express').Router()
 const userController = require('../controllers/userController')
-const Middleware = require('../models/user')
+const Middleware = require('../config')
 
 userRouter.route('/signin')
   .post(Middleware.verifyPassword, Middleware.createToken, userController.SIGNIN)
