@@ -5,42 +5,13 @@ const Notes = require('../db/db').Notes
 const addFolder = (folderName) => {
   Folders
     .create({folderName: folderName })
-    .then(function (newFolder) {
+    .then((newFolder) => {
       const folder = newFolder
     })
-    //    Notes.create({
-    //     noteName: "Hello"
-    //     }
-    //    )
-    //   // console.log("Notes DB ",Notes)
-    //    .then(note=>{
-    //     console.log('this is folder', folder)
-    //     console.log('we are inside add folder and note', note)
-    //    folder.setNotes(note)
-    //    .then((data) =>
-    //       console.log("This is the promise inside ", data)
-    //     )
-    //    })
-
-    //   // you can now access the currently saved task with the variable anotherTask... nice!
-    // })
-    // .catch(function (error) {
-    //   // Ooops, do some error-handling
-    //   console.log('Add Folder error', error)
-    // })
 }
 
-    // .then(data => {
-    //   console.log('folder created!', data)
-    //   res.status(200).send(data)
-    // })
-    // .catch(err => {
-    //   console.log('folder not created', err)
-    // })
-
 const getFolders = () => {
-
-      return Folders.all()
+  return Folders.all()
 }
 
 const removeFolder = (folderName) => {
@@ -66,7 +37,7 @@ const changeFolderName = (updatedName) => {
 }
 
 const getFoldersNote = ()=>{
-  
+
 }
 
 module.exports = {

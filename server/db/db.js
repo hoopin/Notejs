@@ -3,7 +3,7 @@ const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize('postgres://' + process.env.DB_User + ':' + process.env.DB_Password + '@elmer.db.elephantsql.com:5432/' + process.env.DB_User)
 
-// // module.exports = sequelize
+// module.exports = sequelize
 sequelize.authenticate()
   .then(function () {
     console.log('Connection has been established successfully.')
@@ -20,7 +20,7 @@ const Folders = sequelize.define('folders', {
     type: Sequelize.STRING
   }
 }, {
-  freezeTableName: true // Model tableName will be the same as the model name
+  freezeTableName: true
 })
 
 const Notes = sequelize.define('notes', {
@@ -31,7 +31,7 @@ const Notes = sequelize.define('notes', {
     type: Sequelize.STRING
   }
 }, {
-  freezeTableName: true // Model tableName will be the same as the model name
+  freezeTableName: true
 })
 
 const Users = sequelize.define('users', {
@@ -48,7 +48,7 @@ const Users = sequelize.define('users', {
     type: Sequelize.STRING
   }
 }, {
-  freezeTableName: true // Model tableName will be the same as the model name
+  freezeTableName: true
 })
 
 const NotesUsers = sequelize.define('NotesUsers', {
@@ -72,9 +72,9 @@ Users.belongsToMany(Folders, {through: FoldersUsers, foreignKey:'userId'})
 Notes.belongsToMany(Folders, {through: NotesFolders, foreignKey:'noteId'})
 Folders.belongsToMany(Notes, {through: NotesFolders, foreignKey:'folderId'})
 
-// HELPER TO DROP ALL TABLES
+// // HELPER TO DROP ALL TABLES
 // sequelize.sync({force: true}).then(function () {
-// console.log('Tables have been dropped')
+//   console.log('Tables have been dropped')
 // })
 
 sequelize.sync().then(function () {
