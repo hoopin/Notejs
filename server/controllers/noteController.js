@@ -5,7 +5,7 @@ const Promise = require('co')
 // Creates new note
 noteController.POST = (req, res) => {
   console.log('POST /notes')
-  const input = req.body 
+  const input = req.body
   Promise(function * () {
     Notes.addNote(input.name , input.container, input.fn)
   })
