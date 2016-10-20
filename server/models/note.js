@@ -1,7 +1,11 @@
 const Notes = require('../db/db').Notes
 const Folders = require('../db/db').Folders
 
+<<<<<<< HEAD
 const addNote = (noteName, content, folderId) => {
+=======
+const addNote = (noteName, content) => {
+>>>>>>> 5be6f16cd095f1cbe27c792b661fda6c3c04d9d0
 
   Notes
     .create({notesName: noteName, content: content})
