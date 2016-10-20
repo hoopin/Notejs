@@ -24,43 +24,43 @@
 13 silly mapToRegistry uri https://registry.npmjs.org/bcrypt
 14 verbose request uri https://registry.npmjs.org/bcrypt
 15 verbose request no auth needed
-16 info attempt registry request try #1 at 1:12:38 PM
-17 verbose request id 22c37bfce1baa168
-18 verbose etag "C732ZMNYAG6GBU1DOLULG793M"
+16 info attempt registry request try #1 at 7:21:20 PM
+17 verbose request id fdaa381631fc9454
+18 verbose etag "5FL2JQCLVO3G6K2J72AIIGVUD"
 19 http request GET https://registry.npmjs.org/bcrypt
 20 http 200 https://registry.npmjs.org/bcrypt
 21 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-21 verbose headers   etag: '"5FL2JQCLVO3G6K2J72AIIGVUD"',
+21 verbose headers   etag: '"C732ZMNYAG6GBU1DOLULG793M"',
 21 verbose headers   'content-type': 'application/json',
 21 verbose headers   'content-encoding': 'gzip',
 21 verbose headers   'cache-control': 'max-age=300',
 21 verbose headers   'content-length': '11923',
 21 verbose headers   'accept-ranges': 'bytes',
-21 verbose headers   date: 'Wed, 19 Oct 2016 20:12:38 GMT',
+21 verbose headers   date: 'Thu, 20 Oct 2016 02:21:20 GMT',
 21 verbose headers   via: '1.1 varnish',
-21 verbose headers   age: '102',
+21 verbose headers   age: '0',
 21 verbose headers   connection: 'keep-alive',
-21 verbose headers   'x-served-by': 'cache-lax8642-LAX',
+21 verbose headers   'x-served-by': 'cache-lax8631-LAX',
 21 verbose headers   'x-cache': 'HIT',
 21 verbose headers   'x-cache-hits': '1',
-21 verbose headers   'x-timer': 'S1476907958.266132,VS0,VE0',
+21 verbose headers   'x-timer': 'S1476930080.685835,VS0,VE179',
 21 verbose headers   vary: 'Accept-Encoding' }
 22 silly get cb [ 200,
 22 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-22 silly get     etag: '"5FL2JQCLVO3G6K2J72AIIGVUD"',
+22 silly get     etag: '"C732ZMNYAG6GBU1DOLULG793M"',
 22 silly get     'content-type': 'application/json',
 22 silly get     'content-encoding': 'gzip',
 22 silly get     'cache-control': 'max-age=300',
 22 silly get     'content-length': '11923',
 22 silly get     'accept-ranges': 'bytes',
-22 silly get     date: 'Wed, 19 Oct 2016 20:12:38 GMT',
+22 silly get     date: 'Thu, 20 Oct 2016 02:21:20 GMT',
 22 silly get     via: '1.1 varnish',
-22 silly get     age: '102',
+22 silly get     age: '0',
 22 silly get     connection: 'keep-alive',
-22 silly get     'x-served-by': 'cache-lax8642-LAX',
+22 silly get     'x-served-by': 'cache-lax8631-LAX',
 22 silly get     'x-cache': 'HIT',
 22 silly get     'x-cache-hits': '1',
-22 silly get     'x-timer': 'S1476907958.266132,VS0,VE0',
+22 silly get     'x-timer': 'S1476930080.685835,VS0,VE179',
 22 silly get     vary: 'Accept-Encoding' } ]
 23 verbose get saving bcrypt to /Users/christopher/.npm/registry.npmjs.org/bcrypt/.cache.json
 24 verbose correctMkdir /Users/christopher/.npm correctMkdir not in flight; initializing
@@ -171,126 +171,126 @@
 70 silly mapToRegistry uri https://registry.npmjs.org/nan
 71 verbose request uri https://registry.npmjs.org/bindings
 72 verbose request no auth needed
-73 info attempt registry request try #1 at 1:12:39 PM
+73 info attempt registry request try #1 at 7:21:22 PM
 74 verbose etag "8QW29MHCPCE6VJCVI3QVXRJAQ"
 75 http request GET https://registry.npmjs.org/bindings
-76 verbose request uri https://registry.npmjs.org/nan
-77 verbose request no auth needed
-78 info attempt registry request try #1 at 1:12:39 PM
-79 verbose etag "2QXFPVXUU9DUUTAACVV4FOU2Z"
-80 http request GET https://registry.npmjs.org/nan
-81 http 304 https://registry.npmjs.org/bindings
-82 verbose headers { date: 'Wed, 19 Oct 2016 20:12:39 GMT',
-82 verbose headers   via: '1.1 varnish',
-82 verbose headers   'cache-control': 'max-age=300',
-82 verbose headers   etag: '"8QW29MHCPCE6VJCVI3QVXRJAQ"',
-82 verbose headers   age: '174',
-82 verbose headers   connection: 'keep-alive',
-82 verbose headers   'x-served-by': 'cache-lax8642-LAX',
-82 verbose headers   'x-cache': 'HIT',
-82 verbose headers   'x-cache-hits': '1',
-82 verbose headers   'x-timer': 'S1476907959.403101,VS0,VE0',
-82 verbose headers   vary: 'Accept-Encoding' }
-83 silly get cb [ 304,
-83 silly get   { date: 'Wed, 19 Oct 2016 20:12:39 GMT',
-83 silly get     via: '1.1 varnish',
-83 silly get     'cache-control': 'max-age=300',
-83 silly get     etag: '"8QW29MHCPCE6VJCVI3QVXRJAQ"',
-83 silly get     age: '174',
-83 silly get     connection: 'keep-alive',
-83 silly get     'x-served-by': 'cache-lax8642-LAX',
-83 silly get     'x-cache': 'HIT',
-83 silly get     'x-cache-hits': '1',
-83 silly get     'x-timer': 'S1476907959.403101,VS0,VE0',
-83 silly get     vary: 'Accept-Encoding' } ]
-84 verbose etag https://registry.npmjs.org/bindings from cache
-85 verbose get saving bindings to /Users/christopher/.npm/registry.npmjs.org/bindings/.cache.json
-86 verbose correctMkdir /Users/christopher/.npm correctMkdir not in flight; initializing
-87 silly resolveWithNewModule bindings@1.2.1 checking installable status
-88 silly cache add args [ 'bindings@1.2.1', null ]
-89 verbose cache add spec bindings@1.2.1
-90 silly cache add parsed spec Result {
-90 silly cache add   raw: 'bindings@1.2.1',
-90 silly cache add   scope: null,
-90 silly cache add   escapedName: 'bindings',
-90 silly cache add   name: 'bindings',
-90 silly cache add   rawSpec: '1.2.1',
-90 silly cache add   spec: '1.2.1',
-90 silly cache add   type: 'version' }
-91 silly addNamed bindings@1.2.1
-92 verbose addNamed "1.2.1" is a plain semver version for bindings
-93 silly mapToRegistry name bindings
-94 silly mapToRegistry using default registry
-95 silly mapToRegistry registry https://registry.npmjs.org/
-96 silly mapToRegistry data Result {
-96 silly mapToRegistry   raw: 'bindings',
-96 silly mapToRegistry   scope: null,
-96 silly mapToRegistry   escapedName: 'bindings',
-96 silly mapToRegistry   name: 'bindings',
-96 silly mapToRegistry   rawSpec: '',
-96 silly mapToRegistry   spec: 'latest',
-96 silly mapToRegistry   type: 'tag' }
-97 silly mapToRegistry uri https://registry.npmjs.org/bindings
-98 verbose addNameVersion registry:https://registry.npmjs.org/bindings not in flight; fetching
-99 verbose get https://registry.npmjs.org/bindings not expired, no request
-100 silly cache afterAdd bindings@1.2.1
-101 verbose afterAdd /Users/christopher/.npm/bindings/1.2.1/package/package.json not in flight; writing
-102 verbose correctMkdir /Users/christopher/.npm correctMkdir not in flight; initializing
-103 verbose afterAdd /Users/christopher/.npm/bindings/1.2.1/package/package.json written
-104 http 304 https://registry.npmjs.org/nan
-105 verbose headers { date: 'Wed, 19 Oct 2016 20:12:39 GMT',
-105 verbose headers   via: '1.1 varnish',
-105 verbose headers   'cache-control': 'max-age=300',
-105 verbose headers   etag: '"2QXFPVXUU9DUUTAACVV4FOU2Z"',
-105 verbose headers   age: '59',
-105 verbose headers   connection: 'keep-alive',
-105 verbose headers   'x-served-by': 'cache-lax8626-LAX',
-105 verbose headers   'x-cache': 'HIT',
-105 verbose headers   'x-cache-hits': '4',
-105 verbose headers   'x-timer': 'S1476907959.452273,VS0,VE0',
-105 verbose headers   vary: 'Accept-Encoding' }
-106 silly get cb [ 304,
-106 silly get   { date: 'Wed, 19 Oct 2016 20:12:39 GMT',
-106 silly get     via: '1.1 varnish',
-106 silly get     'cache-control': 'max-age=300',
-106 silly get     etag: '"2QXFPVXUU9DUUTAACVV4FOU2Z"',
-106 silly get     age: '59',
-106 silly get     connection: 'keep-alive',
-106 silly get     'x-served-by': 'cache-lax8626-LAX',
-106 silly get     'x-cache': 'HIT',
-106 silly get     'x-cache-hits': '4',
-106 silly get     'x-timer': 'S1476907959.452273,VS0,VE0',
-106 silly get     vary: 'Accept-Encoding' } ]
-107 verbose etag https://registry.npmjs.org/nan from cache
-108 verbose get saving nan to /Users/christopher/.npm/registry.npmjs.org/nan/.cache.json
-109 verbose correctMkdir /Users/christopher/.npm correctMkdir not in flight; initializing
-110 silly resolveWithNewModule nan@2.3.5 checking installable status
-111 silly cache add args [ 'nan@2.3.5', null ]
-112 verbose cache add spec nan@2.3.5
-113 silly cache add parsed spec Result {
-113 silly cache add   raw: 'nan@2.3.5',
-113 silly cache add   scope: null,
-113 silly cache add   escapedName: 'nan',
-113 silly cache add   name: 'nan',
-113 silly cache add   rawSpec: '2.3.5',
-113 silly cache add   spec: '2.3.5',
-113 silly cache add   type: 'version' }
-114 silly addNamed nan@2.3.5
-115 verbose addNamed "2.3.5" is a plain semver version for nan
-116 silly mapToRegistry name nan
-117 silly mapToRegistry using default registry
-118 silly mapToRegistry registry https://registry.npmjs.org/
-119 silly mapToRegistry data Result {
-119 silly mapToRegistry   raw: 'nan',
-119 silly mapToRegistry   scope: null,
-119 silly mapToRegistry   escapedName: 'nan',
-119 silly mapToRegistry   name: 'nan',
-119 silly mapToRegistry   rawSpec: '',
-119 silly mapToRegistry   spec: 'latest',
-119 silly mapToRegistry   type: 'tag' }
-120 silly mapToRegistry uri https://registry.npmjs.org/nan
-121 verbose addNameVersion registry:https://registry.npmjs.org/nan not in flight; fetching
-122 verbose get https://registry.npmjs.org/nan not expired, no request
+76 http 304 https://registry.npmjs.org/bindings
+77 verbose headers { date: 'Thu, 20 Oct 2016 02:21:22 GMT',
+77 verbose headers   via: '1.1 varnish',
+77 verbose headers   'cache-control': 'max-age=300',
+77 verbose headers   etag: '"8QW29MHCPCE6VJCVI3QVXRJAQ"',
+77 verbose headers   age: '19',
+77 verbose headers   connection: 'keep-alive',
+77 verbose headers   'x-served-by': 'cache-lax8631-LAX',
+77 verbose headers   'x-cache': 'HIT',
+77 verbose headers   'x-cache-hits': '1',
+77 verbose headers   'x-timer': 'S1476930082.061473,VS0,VE0',
+77 verbose headers   vary: 'Accept-Encoding' }
+78 silly get cb [ 304,
+78 silly get   { date: 'Thu, 20 Oct 2016 02:21:22 GMT',
+78 silly get     via: '1.1 varnish',
+78 silly get     'cache-control': 'max-age=300',
+78 silly get     etag: '"8QW29MHCPCE6VJCVI3QVXRJAQ"',
+78 silly get     age: '19',
+78 silly get     connection: 'keep-alive',
+78 silly get     'x-served-by': 'cache-lax8631-LAX',
+78 silly get     'x-cache': 'HIT',
+78 silly get     'x-cache-hits': '1',
+78 silly get     'x-timer': 'S1476930082.061473,VS0,VE0',
+78 silly get     vary: 'Accept-Encoding' } ]
+79 verbose etag https://registry.npmjs.org/bindings from cache
+80 verbose get saving bindings to /Users/christopher/.npm/registry.npmjs.org/bindings/.cache.json
+81 verbose correctMkdir /Users/christopher/.npm correctMkdir not in flight; initializing
+82 silly resolveWithNewModule bindings@1.2.1 checking installable status
+83 silly cache add args [ 'bindings@1.2.1', null ]
+84 verbose cache add spec bindings@1.2.1
+85 silly cache add parsed spec Result {
+85 silly cache add   raw: 'bindings@1.2.1',
+85 silly cache add   scope: null,
+85 silly cache add   escapedName: 'bindings',
+85 silly cache add   name: 'bindings',
+85 silly cache add   rawSpec: '1.2.1',
+85 silly cache add   spec: '1.2.1',
+85 silly cache add   type: 'version' }
+86 silly addNamed bindings@1.2.1
+87 verbose addNamed "1.2.1" is a plain semver version for bindings
+88 silly mapToRegistry name bindings
+89 silly mapToRegistry using default registry
+90 silly mapToRegistry registry https://registry.npmjs.org/
+91 silly mapToRegistry data Result {
+91 silly mapToRegistry   raw: 'bindings',
+91 silly mapToRegistry   scope: null,
+91 silly mapToRegistry   escapedName: 'bindings',
+91 silly mapToRegistry   name: 'bindings',
+91 silly mapToRegistry   rawSpec: '',
+91 silly mapToRegistry   spec: 'latest',
+91 silly mapToRegistry   type: 'tag' }
+92 silly mapToRegistry uri https://registry.npmjs.org/bindings
+93 verbose addNameVersion registry:https://registry.npmjs.org/bindings not in flight; fetching
+94 verbose get https://registry.npmjs.org/bindings not expired, no request
+95 verbose request uri https://registry.npmjs.org/nan
+96 verbose request no auth needed
+97 info attempt registry request try #1 at 7:21:22 PM
+98 verbose etag "2QXFPVXUU9DUUTAACVV4FOU2Z"
+99 http request GET https://registry.npmjs.org/nan
+100 http 304 https://registry.npmjs.org/nan
+101 verbose headers { date: 'Thu, 20 Oct 2016 02:21:22 GMT',
+101 verbose headers   via: '1.1 varnish',
+101 verbose headers   'cache-control': 'max-age=300',
+101 verbose headers   etag: '"2QXFPVXUU9DUUTAACVV4FOU2Z"',
+101 verbose headers   age: '135',
+101 verbose headers   connection: 'keep-alive',
+101 verbose headers   'x-served-by': 'cache-lax8631-LAX',
+101 verbose headers   'x-cache': 'HIT',
+101 verbose headers   'x-cache-hits': '1',
+101 verbose headers   'x-timer': 'S1476930082.134441,VS0,VE0',
+101 verbose headers   vary: 'Accept-Encoding' }
+102 silly get cb [ 304,
+102 silly get   { date: 'Thu, 20 Oct 2016 02:21:22 GMT',
+102 silly get     via: '1.1 varnish',
+102 silly get     'cache-control': 'max-age=300',
+102 silly get     etag: '"2QXFPVXUU9DUUTAACVV4FOU2Z"',
+102 silly get     age: '135',
+102 silly get     connection: 'keep-alive',
+102 silly get     'x-served-by': 'cache-lax8631-LAX',
+102 silly get     'x-cache': 'HIT',
+102 silly get     'x-cache-hits': '1',
+102 silly get     'x-timer': 'S1476930082.134441,VS0,VE0',
+102 silly get     vary: 'Accept-Encoding' } ]
+103 verbose etag https://registry.npmjs.org/nan from cache
+104 verbose get saving nan to /Users/christopher/.npm/registry.npmjs.org/nan/.cache.json
+105 verbose correctMkdir /Users/christopher/.npm correctMkdir not in flight; initializing
+106 silly resolveWithNewModule nan@2.3.5 checking installable status
+107 silly cache add args [ 'nan@2.3.5', null ]
+108 verbose cache add spec nan@2.3.5
+109 silly cache add parsed spec Result {
+109 silly cache add   raw: 'nan@2.3.5',
+109 silly cache add   scope: null,
+109 silly cache add   escapedName: 'nan',
+109 silly cache add   name: 'nan',
+109 silly cache add   rawSpec: '2.3.5',
+109 silly cache add   spec: '2.3.5',
+109 silly cache add   type: 'version' }
+110 silly addNamed nan@2.3.5
+111 verbose addNamed "2.3.5" is a plain semver version for nan
+112 silly mapToRegistry name nan
+113 silly mapToRegistry using default registry
+114 silly mapToRegistry registry https://registry.npmjs.org/
+115 silly mapToRegistry data Result {
+115 silly mapToRegistry   raw: 'nan',
+115 silly mapToRegistry   scope: null,
+115 silly mapToRegistry   escapedName: 'nan',
+115 silly mapToRegistry   name: 'nan',
+115 silly mapToRegistry   rawSpec: '',
+115 silly mapToRegistry   spec: 'latest',
+115 silly mapToRegistry   type: 'tag' }
+116 silly mapToRegistry uri https://registry.npmjs.org/nan
+117 verbose addNameVersion registry:https://registry.npmjs.org/nan not in flight; fetching
+118 silly cache afterAdd bindings@1.2.1
+119 verbose afterAdd /Users/christopher/.npm/bindings/1.2.1/package/package.json not in flight; writing
+120 verbose correctMkdir /Users/christopher/.npm correctMkdir not in flight; initializing
+121 verbose get https://registry.npmjs.org/nan not expired, no request
+122 verbose afterAdd /Users/christopher/.npm/bindings/1.2.1/package/package.json written
 123 silly cache afterAdd nan@2.3.5
 124 verbose afterAdd /Users/christopher/.npm/nan/2.3.5/package/package.json not in flight; writing
 125 verbose correctMkdir /Users/christopher/.npm correctMkdir not in flight; initializing
@@ -3407,14 +3407,14 @@
 197 silly gunzTarPerm modes [ '755', '644' ]
 198 silly gunzTarPerm extractEntry package.json
 199 silly gunzTarPerm extractEntry package.json
-200 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
-201 silly gunzTarPerm extractEntry package.json
+200 silly gunzTarPerm extractEntry package.json
+201 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
 202 silly gunzTarPerm extractEntry README.md
 203 silly gunzTarPerm extractEntry bindings.js
-204 silly gunzTarPerm extractEntry README.md
-205 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
-206 silly gunzTarPerm extractEntry .npmignore
-207 silly gunzTarPerm extractEntry README.md
+204 silly gunzTarPerm extractEntry .npmignore
+205 silly gunzTarPerm extractEntry README.md
+206 silly gunzTarPerm extractEntry README.md
+207 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
 208 silly gunzTarPerm extractEntry include_dirs.js
 209 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 420 ]
 210 silly gunzTarPerm extractEntry nan_converters.h
@@ -3423,97 +3423,97 @@
 213 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
 214 silly gunzTarPerm extractEntry doc/node_misc.md
 215 silly gunzTarPerm modified mode [ 'doc/node_misc.md', 436, 420 ]
-216 silly gunzTarPerm extractEntry LICENSE
-217 silly gunzTarPerm extractEntry bcrypt.js
-218 silly gunzTarPerm extractEntry Makefile
-219 silly gunzTarPerm extractEntry .travis.yml
-220 silly gunzTarPerm extractEntry CHANGELOG.md
-221 silly gunzTarPerm extractEntry binding.gyp
-222 silly gunzTarPerm extractEntry examples/async_compare.js
-223 silly gunzTarPerm extractEntry examples/forever_gen_salt.js
-224 silly gunzTarPerm extractEntry test/async.js
-225 silly gunzTarPerm extractEntry test/repetitions.js
-226 silly gunzTarPerm extractEntry test/sync.js
-227 silly gunzTarPerm extractEntry ISSUE_TEMPLATE.md
-228 silly gunzTarPerm extractEntry src/bcrypt.cc
-229 silly gunzTarPerm extractEntry src/bcrypt_node.cc
-230 silly gunzTarPerm extractEntry src/blowfish.cc
-231 silly gunzTarPerm extractEntry src/node_blf.h
-232 silly gunzTarPerm extractEntry werker.yml
-233 silly gunzTarPerm extractEntry doc/asyncworker.md
-234 silly gunzTarPerm modified mode [ 'doc/asyncworker.md', 436, 420 ]
-235 silly gunzTarPerm extractEntry doc/callback.md
-236 silly gunzTarPerm modified mode [ 'doc/callback.md', 436, 420 ]
-237 silly gunzTarPerm extractEntry doc/converters.md
-238 silly gunzTarPerm modified mode [ 'doc/converters.md', 436, 420 ]
-239 silly gunzTarPerm extractEntry doc/errors.md
-240 silly gunzTarPerm modified mode [ 'doc/errors.md', 436, 420 ]
-241 silly gunzTarPerm extractEntry doc/maybe_types.md
-242 silly gunzTarPerm modified mode [ 'doc/maybe_types.md', 436, 420 ]
-243 silly gunzTarPerm extractEntry doc/methods.md
-244 silly gunzTarPerm modified mode [ 'doc/methods.md', 436, 420 ]
-245 silly gunzTarPerm extractEntry doc/new.md
-246 silly gunzTarPerm modified mode [ 'doc/new.md', 436, 420 ]
-247 silly gentlyRm /Users/christopher/Desktop/Notejs/node_modules/.staging/bindings-5c6309d7/node_modules is being purged
-248 verbose gentlyRm don't care about contents; nuking /Users/christopher/Desktop/Notejs/node_modules/.staging/bindings-5c6309d7/node_modules
-249 silly gunzTarPerm extractEntry doc/buffers.md
-250 silly gunzTarPerm modified mode [ 'doc/buffers.md', 436, 420 ]
-251 silly gunzTarPerm extractEntry doc/object_wrappers.md
-252 silly gunzTarPerm modified mode [ 'doc/object_wrappers.md', 436, 420 ]
-253 silly gunzTarPerm extractEntry doc/persistent.md
-254 silly gunzTarPerm modified mode [ 'doc/persistent.md', 436, 420 ]
-255 silly gunzTarPerm extractEntry doc/scopes.md
-256 silly gunzTarPerm modified mode [ 'doc/scopes.md', 436, 420 ]
-257 silly gunzTarPerm extractEntry doc/script.md
-258 silly gunzTarPerm modified mode [ 'doc/script.md', 436, 420 ]
-259 silly gunzTarPerm extractEntry doc/string_bytes.md
-260 silly gunzTarPerm modified mode [ 'doc/string_bytes.md', 436, 420 ]
-261 silly gunzTarPerm extractEntry doc/v8_internals.md
-262 silly gunzTarPerm modified mode [ 'doc/v8_internals.md', 436, 420 ]
-263 silly gunzTarPerm extractEntry doc/v8_misc.md
-264 silly gunzTarPerm modified mode [ 'doc/v8_misc.md', 436, 420 ]
-265 silly gunzTarPerm extractEntry nan.h
-266 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
-267 silly gunzTarPerm extractEntry nan_callbacks.h
-268 silly gunzTarPerm modified mode [ 'nan_callbacks.h', 436, 420 ]
-269 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
-270 silly gunzTarPerm modified mode [ 'nan_callbacks_12_inl.h', 436, 420 ]
-271 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
-272 silly gunzTarPerm modified mode [ 'nan_callbacks_pre_12_inl.h', 436, 420 ]
-273 silly gunzTarPerm extractEntry nan_converters_43_inl.h
-274 silly gunzTarPerm modified mode [ 'nan_converters_43_inl.h', 436, 420 ]
-275 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
-276 silly gunzTarPerm modified mode [ 'nan_converters_pre_43_inl.h', 436, 420 ]
-277 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
-278 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
-279 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
-280 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
-281 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
-282 silly gunzTarPerm modified mode [ 'nan_maybe_43_inl.h', 436, 420 ]
-283 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
-284 silly gunzTarPerm modified mode [ 'nan_maybe_pre_43_inl.h', 436, 420 ]
-285 silly gunzTarPerm extractEntry nan_new.h
-286 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
-287 silly gunzTarPerm extractEntry nan_object_wrap.h
-288 silly gunzTarPerm modified mode [ 'nan_object_wrap.h', 436, 420 ]
-289 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
-290 silly gunzTarPerm modified mode [ 'nan_persistent_12_inl.h', 436, 420 ]
-291 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
-292 silly gunzTarPerm modified mode [ 'nan_persistent_pre_12_inl.h', 436, 420 ]
-293 silly gunzTarPerm extractEntry nan_string_bytes.h
-294 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
-295 silly gunzTarPerm extractEntry nan_typedarray_contents.h
-296 silly gunzTarPerm modified mode [ 'nan_typedarray_contents.h', 436, 420 ]
-297 silly gunzTarPerm extractEntry nan_weak.h
-298 silly gunzTarPerm modified mode [ 'nan_weak.h', 436, 420 ]
-299 silly gunzTarPerm extractEntry CHANGELOG.md
-300 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
-301 silly gunzTarPerm extractEntry tools/package.json
-302 silly gunzTarPerm modified mode [ 'tools/package.json', 436, 420 ]
-303 silly gunzTarPerm extractEntry tools/README.md
-304 silly gunzTarPerm modified mode [ 'tools/README.md', 436, 420 ]
-305 silly gunzTarPerm extractEntry tools/1to2.js
-306 silly gunzTarPerm modified mode [ 'tools/1to2.js', 509, 493 ]
+216 silly gunzTarPerm extractEntry doc/asyncworker.md
+217 silly gunzTarPerm modified mode [ 'doc/asyncworker.md', 436, 420 ]
+218 silly gunzTarPerm extractEntry doc/callback.md
+219 silly gunzTarPerm modified mode [ 'doc/callback.md', 436, 420 ]
+220 silly gunzTarPerm extractEntry doc/converters.md
+221 silly gunzTarPerm modified mode [ 'doc/converters.md', 436, 420 ]
+222 silly gunzTarPerm extractEntry doc/errors.md
+223 silly gunzTarPerm modified mode [ 'doc/errors.md', 436, 420 ]
+224 silly gunzTarPerm extractEntry doc/maybe_types.md
+225 silly gunzTarPerm modified mode [ 'doc/maybe_types.md', 436, 420 ]
+226 silly gunzTarPerm extractEntry doc/methods.md
+227 silly gunzTarPerm modified mode [ 'doc/methods.md', 436, 420 ]
+228 silly gunzTarPerm extractEntry doc/new.md
+229 silly gunzTarPerm modified mode [ 'doc/new.md', 436, 420 ]
+230 silly gunzTarPerm extractEntry doc/buffers.md
+231 silly gunzTarPerm modified mode [ 'doc/buffers.md', 436, 420 ]
+232 silly gunzTarPerm extractEntry doc/object_wrappers.md
+233 silly gunzTarPerm modified mode [ 'doc/object_wrappers.md', 436, 420 ]
+234 silly gunzTarPerm extractEntry doc/persistent.md
+235 silly gunzTarPerm modified mode [ 'doc/persistent.md', 436, 420 ]
+236 silly gunzTarPerm extractEntry doc/scopes.md
+237 silly gunzTarPerm modified mode [ 'doc/scopes.md', 436, 420 ]
+238 silly gunzTarPerm extractEntry doc/script.md
+239 silly gunzTarPerm modified mode [ 'doc/script.md', 436, 420 ]
+240 silly gunzTarPerm extractEntry doc/string_bytes.md
+241 silly gunzTarPerm modified mode [ 'doc/string_bytes.md', 436, 420 ]
+242 silly gunzTarPerm extractEntry doc/v8_internals.md
+243 silly gunzTarPerm modified mode [ 'doc/v8_internals.md', 436, 420 ]
+244 silly gunzTarPerm extractEntry doc/v8_misc.md
+245 silly gunzTarPerm modified mode [ 'doc/v8_misc.md', 436, 420 ]
+246 silly gunzTarPerm extractEntry nan.h
+247 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
+248 silly gunzTarPerm extractEntry nan_callbacks.h
+249 silly gunzTarPerm modified mode [ 'nan_callbacks.h', 436, 420 ]
+250 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
+251 silly gunzTarPerm modified mode [ 'nan_callbacks_12_inl.h', 436, 420 ]
+252 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
+253 silly gunzTarPerm modified mode [ 'nan_callbacks_pre_12_inl.h', 436, 420 ]
+254 silly gunzTarPerm extractEntry nan_converters_43_inl.h
+255 silly gunzTarPerm modified mode [ 'nan_converters_43_inl.h', 436, 420 ]
+256 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
+257 silly gunzTarPerm modified mode [ 'nan_converters_pre_43_inl.h', 436, 420 ]
+258 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+259 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
+260 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+261 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
+262 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
+263 silly gunzTarPerm modified mode [ 'nan_maybe_43_inl.h', 436, 420 ]
+264 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
+265 silly gunzTarPerm modified mode [ 'nan_maybe_pre_43_inl.h', 436, 420 ]
+266 silly gunzTarPerm extractEntry nan_new.h
+267 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
+268 silly gunzTarPerm extractEntry nan_object_wrap.h
+269 silly gunzTarPerm modified mode [ 'nan_object_wrap.h', 436, 420 ]
+270 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
+271 silly gunzTarPerm modified mode [ 'nan_persistent_12_inl.h', 436, 420 ]
+272 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
+273 silly gunzTarPerm modified mode [ 'nan_persistent_pre_12_inl.h', 436, 420 ]
+274 silly gunzTarPerm extractEntry nan_string_bytes.h
+275 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
+276 silly gunzTarPerm extractEntry nan_typedarray_contents.h
+277 silly gunzTarPerm modified mode [ 'nan_typedarray_contents.h', 436, 420 ]
+278 silly gunzTarPerm extractEntry nan_weak.h
+279 silly gunzTarPerm modified mode [ 'nan_weak.h', 436, 420 ]
+280 silly gunzTarPerm extractEntry CHANGELOG.md
+281 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+282 silly gunzTarPerm extractEntry tools/package.json
+283 silly gunzTarPerm modified mode [ 'tools/package.json', 436, 420 ]
+284 silly gunzTarPerm extractEntry tools/README.md
+285 silly gunzTarPerm modified mode [ 'tools/README.md', 436, 420 ]
+286 silly gunzTarPerm extractEntry tools/1to2.js
+287 silly gunzTarPerm modified mode [ 'tools/1to2.js', 509, 493 ]
+288 silly gunzTarPerm extractEntry LICENSE
+289 silly gunzTarPerm extractEntry bcrypt.js
+290 silly gunzTarPerm extractEntry Makefile
+291 silly gunzTarPerm extractEntry .travis.yml
+292 silly gunzTarPerm extractEntry CHANGELOG.md
+293 silly gunzTarPerm extractEntry binding.gyp
+294 silly gunzTarPerm extractEntry examples/async_compare.js
+295 silly gunzTarPerm extractEntry examples/forever_gen_salt.js
+296 silly gunzTarPerm extractEntry test/async.js
+297 silly gunzTarPerm extractEntry test/repetitions.js
+298 silly gunzTarPerm extractEntry test/sync.js
+299 silly gunzTarPerm extractEntry ISSUE_TEMPLATE.md
+300 silly gunzTarPerm extractEntry src/bcrypt.cc
+301 silly gunzTarPerm extractEntry src/bcrypt_node.cc
+302 silly gunzTarPerm extractEntry src/blowfish.cc
+303 silly gunzTarPerm extractEntry src/node_blf.h
+304 silly gunzTarPerm extractEntry werker.yml
+305 silly gentlyRm /Users/christopher/Desktop/Notejs/node_modules/.staging/bindings-5c6309d7/node_modules is being purged
+306 verbose gentlyRm don't care about contents; nuking /Users/christopher/Desktop/Notejs/node_modules/.staging/bindings-5c6309d7/node_modules
 307 silly gentlyRm /Users/christopher/Desktop/Notejs/node_modules/.staging/bcrypt-4855b199/node_modules is being purged
 308 verbose gentlyRm don't care about contents; nuking /Users/christopher/Desktop/Notejs/node_modules/.staging/bcrypt-4855b199/node_modules
 309 silly gentlyRm /Users/christopher/Desktop/Notejs/node_modules/.staging/nan-38a50880/node_modules is being purged
