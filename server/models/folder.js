@@ -1,4 +1,3 @@
-
 const Folders = require('../db/db').Folders
 const Notes = require('../db/db').Notes
 
@@ -36,8 +35,8 @@ const changeFolderName = (updatedName) => {
     })
 }
 
-const getFoldersNote = ()=>{
-
+const getFoldersNote = () => {
+  
 }
 
 module.exports = {
