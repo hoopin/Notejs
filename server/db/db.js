@@ -51,17 +51,9 @@ const Users = sequelize.define('users', {
   freezeTableName: true
 })
 
-const NotesUsers = sequelize.define('NotesUsers', {
-
-})
-
-const FoldersUsers = sequelize.define('FoldersUsers', {
-
-})
-
-const NotesFolders = sequelize.define('NotesFolders', {
-
-})
+const NotesUsers = sequelize.define('NotesUsers', {})
+const FoldersUsers = sequelize.define('FoldersUsers', {})
+const NotesFolders = sequelize.define('NotesFolders', {})
 
 Notes.belongsToMany(Users, {through: NotesUsers, foreignKey: 'noteId'})
 Users.belongsToMany(Notes, {through: NotesUsers, foreignKey: 'userId'})
