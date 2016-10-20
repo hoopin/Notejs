@@ -19,7 +19,7 @@ app.use(session({
   cookie: { secure: true }
 }))
 
-app.use('/', express.static(path.join(__dirname, '../app')))
+app.use('/', express.static(path.join(__dirname, '../public')))
 //
 app.use('/api', rootRouter)
 
