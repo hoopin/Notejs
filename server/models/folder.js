@@ -35,13 +35,19 @@ const changeFolderName = (updatedName) => {
     })
 }
 
-const getFoldersNote = () => {
-  
+const getFoldersNote = (folderId) => {
+  return Folders.findOne({
+    where: {id: folderId}
+  })
+  .then((folder) => {
+    return folder.getNotes({})
+  })
 }
 
 module.exports = {
   addFolder: addFolder,
   removeFolder: removeFolder,
   changeFolderName: changeFolderName,
-  getFolders: getFolders
+  getFolders: getFolders,
+  getFoldersNote: getFoldersNote
 }
