@@ -2,7 +2,7 @@ const Notes = require('../db/db').Notes
 const Folders = require('../db/db').Folders
 
 const addNote = (noteName, content, folderId) => {
-  Notes
+  return Notes
     .create({notesName: noteName, content: content})
     .then(function (newNote) {
       const note = newNote
@@ -26,30 +26,22 @@ const addNote = (noteName, content, folderId) => {
     })
 }
 
-const getNotes = (folderID) => {
-  Notes
-    .findAll({
-      include: [{
-        model: Folders,
-        through: {
-          attributes: ['folderId'],
-          where: {
-            folderId: folderID
-          }
-        }
-      }]
-    })
-    .then(notes => {
-      return notes
+const getNote = (noteId) => {
+  return Notes
+    .findOne({
+    	where: {
+    		id: noteId
+    	}
     })
 }
 
-const removeNote = (noteName) => {
-  Notes
+const deleteNote = (noteId) => {
+  return Notes
     .findOne({
-      where: {notesName: noteName}
+      where: {id: noteId}
     })
     .then(note => {
+      console.log("NOTE", note)
       note.destroy()
     })
     .catch((err) => {
@@ -58,7 +50,7 @@ const removeNote = (noteName) => {
 }
 
 const changeNoteName = (updatedName, updateMessage) => {
-  Notes
+  return Notes
     .update({
       notesName: updatedName
     })
@@ -67,25 +59,25 @@ const changeNoteName = (updatedName, updateMessage) => {
     })
 }
 
-const saveNotes = (notesName, saveContent) => {
-  Notes
-  .findOne({
-  	where: {
-  		notesName: notesName
-  	}
-  })
-  .then(object => {
-  	object
-  	  .update({
-		    content: saveContent
-    	})
+const updateNote = (noteId, content) => {
+  return Notes
+    .findOne({
+    	where: {
+    		id: noteId
+    	}
     })
+    .then(object => {
+    	return object
+    	  .update({
+  		    content: content
+      	})
+      })
 }
 
 module.exports = {
   addNote: addNote,
-  removeNote: removeNote,
+  deleteNote: deleteNote,
   changeNoteName: changeNoteName,
-  saveNotes: saveNotes,
-  getNotes: getNotes
+  updateNote: updateNote,
+  getNote: getNote
 }

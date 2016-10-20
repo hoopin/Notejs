@@ -6,6 +6,7 @@ noteRouter.route('/')
 
 noteRouter.route('/:noteId')
   .get(noteController.GET_NOTEID)
-  .post(noteController.POST_NOTEID)
+  .put(noteController.UPDATE_NOTEID)
+  .delete(noteController.DELETE_NOTE)
 
 module.exports = noteRouter

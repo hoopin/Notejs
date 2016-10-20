@@ -7,6 +7,6 @@ folderRouter.route('/')
 
 folderRouter.route('/:folderId')
   .get(folderController.GET_FOLDERID)
-  .post(folderController.POST_FOLDERID)
+  .put(folderController.UPDATE_FOLDER)
 
 module.exports = folderRouter
