@@ -16,11 +16,18 @@ export function deleteNote () {
   }
 }
 
-export function fetchNote () {
-  const request = axios.get(``)
-  return {
-    type: FETCH_NOTE,
-    payload: request
+export function fetchNote (id) {
+  return (dispatch) => {
+    axios.get(`/api/notes/${id}`)
+    .then((res) => {
+      dispatch({
+        type: FETCH_NOTE,
+        payload: res.data
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 }
 

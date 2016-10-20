@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchFolders } from '../actions/action_folder'
+import { fetchFolders, setCurrentFolder } from '../actions/action_folder'
 import { Link } from 'react-router'
 
 class ViewFolders extends Component {
@@ -47,4 +47,4 @@ function mapStateToProps (state) {
   return { folders: state.data.folders }
 }
 
-export default connect(mapStateToProps, { fetchFolders })(ViewFolders)
+export default connect(mapStateToProps, { fetchFolders, setCurrentFolder })(ViewFolders)
