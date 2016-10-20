@@ -1,16 +1,11 @@
 const noteController = {}
 const Notes = require('../models/note')
-const Promise = require('co')
 
 // Creates new note
 noteController.POST = (req, res) => {
-  console.log('POST /notes')
-  const input = req.body
-  Promise(function * () {
-    Notes.addNote(input.name , input.container, input.fn)
-  })
+  const note = req.body
+  Notes.addNote(note.notesName, note.content, note.folderId)
     .then(note => {
-      console.log('INSIDE NOTE')
       res.status(200).send(note)
     })
 }
@@ -18,22 +13,29 @@ noteController.POST = (req, res) => {
 // gets specific note  --> return array of updates for the sidebar
 // Each update will be stored with the note, and returned in one request
 noteController.GET_NOTEID = (req, res) => {
-  console.log('GET /notes/:noteId')
-  res.status(200).json({
-    message: '/notes/:noteId GET'
-  })
+  const noteId = req.params.noteId
+  Notes.getNote(noteId)
+    .then((note) => {
+      res.status(200).send(note)
+    })
 }
 
-// Save a note
-noteController.POST_NOTEID = (req, res) => {
-  console.log('POST /notes/:noteId')
-  const Note = req.body
-  Promise(function* () {
-    Notes.saveNotes(updatedNote)
-  })
-  .then(() => {
-    console.log('You have updaed the note')
-  })
+noteController.UPDATE_NOTEID = (req, res) => {
+  const noteContent = req.body.content
+  const noteId = req.params.noteId
+  Notes.updateNote(noteId, noteContent)
+    .then((updatedNote) => {
+      // This is undefined
+      res.status(200).send(updatedNote)
+    })
+}
+
+noteController.DELETE_NOTE = (req, res) => {
+  const noteId = req.params.noteId
+  Notes.deleteNote(noteId)
+    .then((note) => {
+      res.status(200).send("Note deleted")
+    })
 }
 
 module.exports = noteController

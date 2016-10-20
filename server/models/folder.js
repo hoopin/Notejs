@@ -1,4 +1,3 @@
-
 const Folders = require('../db/db').Folders
 const Notes = require('../db/db').Notes
 
@@ -15,34 +14,45 @@ const getFolders = () => {
 }
 
 const removeFolder = (folderName) => {
-  Folders.findOne({
-    where: {folderName: folderName}
-  })
+  // Folders.findOne({
+  //   where: {folderName: folderName}
+  // })
+  //   .then(folder => {
+  //     folder.destroy()
+  //   })
+  //   .catch((err) => {
+  //     console.log('err in removing folder', err)
+  //   })
+}
+
+const updateFolderName = (folderId, newName) => {
+  return Folders
+    .findOne({
+    	where: {
+    		id: folderId
+    	}
+    })
     .then(folder => {
-      folder.destroy()
-    })
-    .catch((err) => {
-      console.log('err in removing folder', err)
-    })
+    	return folder
+    	  .update({
+  		    folderName: newName
+      	})
+      })
 }
 
-const changeFolderName = (updatedName) => {
-  Folders
-    .update({
-      folderName: updatedName
-    })
-    .then(() => {
-      console.log('Folder Name has been Changed')
-    })
-}
-
-const getFoldersNote = ()=>{
-
+const getFoldersNotes = (folderId) => {
+  return Folders.findOne({
+    where: {id: folderId}
+  })
+  .then((folder) => {
+    return folder.getNotes({})
+  })
 }
 
 module.exports = {
   addFolder: addFolder,
   removeFolder: removeFolder,
-  changeFolderName: changeFolderName,
-  getFolders: getFolders
+  updateFolderName: updateFolderName,
+  getFolders: getFolders,
+  getFoldersNotes: getFoldersNotes
 }
