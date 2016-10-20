@@ -9,6 +9,7 @@ export const DELETE_FOLDER = 'DELETE_FOLDER'
 export const UPDATE_FOLDER = 'UPDATE_FOLDER'
 
 // TODO: update axios requests with backend endpoints
+
 export function fetchFolder (id) {
   return (dispatch) => {
     axios.get(`/api/folders/${id}`)
@@ -26,7 +27,7 @@ export function fetchFolder (id) {
 
 export function fetchFolders () {
   return (dispatch) => {
-    axios.get(`/api/folders`)
+    axios.get(`/api/folders/home/1`)
     .then((res) => {
       dispatch({
         type: FETCH_FOLDERS,

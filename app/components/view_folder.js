@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchFolder } from '../actions/action_folder'
-
+import { Link } from 'react-router'
 
 class ViewFolder extends Component {
 
@@ -27,10 +27,14 @@ class ViewFolder extends Component {
     if (this.props.currentFolder === null) {
       return <div>Loading folder...</div>
     }
-    console.log('folder rendering', this.props.currentFolder)
-    return (
-      <div>{this.props.currentFolder.message}</div>
-    )
+    console.log(' rendering notes in folder', this.props.currentFolder)
+    return this.props.currentFolder.map((note) => {
+      return (
+        <Link to={'notes/' + note.id} onClick={this.onFolderClick.bind(this, note.id)} key={note.id}>
+          <strong> {note.notesName ? note.notesName : 'No name note'} </strong>
+        </Link>
+      )
+    })
   }
 
   render () {

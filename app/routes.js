@@ -9,11 +9,13 @@ import ViewSignIn from './components/view_signin'
 import ViewSignUp from './components/view_signup'
 import ViewHomePage from './components/view_homepage'
 import ViewFolders from './components/view_folders'
+import ViewNoteContent from './components/view_notecontent'
 
 export default (
   <Route path='/' component={App} >
     <IndexRoute component={ViewHomePage} />
-    <Route path='note/:id' component={ViewNoteIndex} />
+    <Route path='notes/:id' component={ViewNoteContent} />
+    <Route path='editNote/:id' component={ViewNoteIndex} />
     <Route path='folders/:id' component={ViewFolder} />
     <Route path='signup' component={ViewSignUp} />
     <Route path='signin' component={ViewSignIn} />
