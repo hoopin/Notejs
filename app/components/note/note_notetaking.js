@@ -1,35 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Editor, EditorState, RichUtils} from 'draft-js'
-// const {hasCommandModifier} = KeyBindingUtil
-const content = EditorState.getCurrentContent()
-console.log('str= ', EditorState.getCurrentContent())
-console.log('content=', content)
+import {Editor, EditorState, RichUtils, convertToRaw} from 'draft-js'
+
 class MyEditor extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {editorState: EditorState.createEmpty()}
+    this.state = { value: '', editorState: EditorState.createEmpty() }
     this.onChange = (editorState) => this.setState({editorState})
-    this.handleKeyCommand = this.handleKeyCommand.bind(this)
   }
-  // handleKeyCommand (command) {
-  //   const newState = RichUtils.handleKeyCommand(this.state.editorState, command)
-  //   if (command === 'ctrl+s'){
-  //     console.log('ctrl+s pressed')
-  //   }
-  //   if (newState) {
-  //     this.onChange(newState)
-  //     return 'handled'
-  //   }
-  //   return 'unhandled'
-  // }
-  // myKeyBindingFn(e: SyntheticKeyboardEvent): string {
-  //   if(e.keyCode === 83 && hasCommandModifier(e)) {
-  //     return 'ctrl+s';
-  //   }
-  //   //  use default keys
-  //   return getDefaultKeyBinding(e)
-  // }
+  _createContent () {
+    let content = convertToRaw(this.state.editorState.getCurrentContent())
+    console.log(content)
+  }
+
   _onBoldClick () {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'))
   }
@@ -37,7 +20,7 @@ class MyEditor extends React.Component {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'UNDERLINE'))
   }
   render () {
-    // const {EditorState} = this.state
+    // const {editorState} = this.state
     return (
       <div id='content'>
       <h1>Notejs</h1>
@@ -45,6 +28,7 @@ class MyEditor extends React.Component {
       <button onClick={this._onBoldClick.bind(this)}>Bold</button>
       <button onClick={this._onUnderlineClick.bind(this)}>Underline</button>
       <Editor editorState={this.state.editorState} onChange={this.onChange} />
+      <button onClick={this._createContent.bind(this)}>Log content</button>
       </div>
       </div>
     )
