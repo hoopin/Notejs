@@ -69,14 +69,16 @@
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _reduxPromise = __webpack_require__(/*! redux-promise */ 467);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 469);
 	
-	var _reduxPromise2 = _interopRequireDefault(_reduxPromise);
+	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var createStoreWithMiddleware = (0, _redux.applyMiddleware)(_reduxPromise2.default)(_redux.createStore);
+	var createStoreWithMiddleware = (0, _redux.applyMiddleware)(_reduxThunk2.default)(_redux.createStore);
+	// const createStoreWithMiddleware = applyMiddleware(promise)(createStore)
 	
+	// import promise from 'redux-promise'
 	(0, _reactDom.render)(_react2.default.createElement(
 	  _reactRedux.Provider,
 	  { store: createStoreWithMiddleware(_reducers2.default) },
@@ -29389,21 +29391,27 @@
 /*!***************************************!*\
   !*** ./app/reducers/reducer_notes.js ***!
   \***************************************/
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; // TODO: import needed actions
+	// import { FETCH_NOTE, FETCH_FOLDER, FETCH_ALL } from '../actions/action_fetch'
+	
 	
 	exports.default = function () {
 	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
 	  var action = arguments[1];
 	
 	  switch (action.type) {
-	    // case FETCH_FOLDER: // TODO: Update this case
-	    //   return {...state, folders: action.payload.data}
+	    case _action_folder.FETCH_FOLDERS:
+	      // TODO: Update this case
+	      console.log('This is action:', action.payload);
+	      return _extends({}, state, { folders: action.payload });
 	    // case FETCH_NOTE:
 	    //   return {...state, currentNote: action.payload.data}
 	    // case FETCH_ALL: // TODO: Update this case
@@ -29413,8 +29421,7 @@
 	  }
 	};
 	
-	// TODO: import needed actions
-	// import { FETCH_NOTE, FETCH_FOLDER, FETCH_ALL } from '../actions/action_fetch'
+	var _action_folder = __webpack_require__(/*! ../actions/action_folder */ 468);
 	
 	var INITIAL_STATE = {
 	  folders: [], // Each folder in array has object props of {id: unique number, name: string, notes: []}
@@ -39098,7 +39105,7 @@
 	
 	var _view_homepage2 = _interopRequireDefault(_view_homepage);
 	
-	var _view_folders = __webpack_require__(/*! ./components/view_folders */ 472);
+	var _view_folders = __webpack_require__(/*! ./components/view_folders */ 467);
 	
 	var _view_folders2 = _interopRequireDefault(_view_folders);
 	
@@ -39173,84 +39180,42 @@
 /*!***************************************!*\
   !*** ./app/components/view_folder.js ***!
   \***************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';
+	// import React, { Component } from 'react'
+	// import { connect } from 'react-redux'
+	// // import { fetchFolder } from '../action/action_folder'
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
+	// class ViewFolder extends Component {
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	//   constructor (props) {
+	//     super(props)
+	//     this.state = {likesCount: 0}
+	//     this.onLike = this.onLike.bind(this)
+	//   }
 	
-	var _react = __webpack_require__(/*! react */ 1);
+	//   onLike () {
+	//     let newLikesCount = this.state.likesCount + 1
+	//     this.setState({likesCount: newLikesCount})
+	//   }
 	
-	var _react2 = _interopRequireDefault(_react);
+	//   render () {
+	//     return (
+	//       <div>
+	//         Likes : <span>{this.state.likesCount}</span>
+	//         <div><button onClick={this.onLike}>Like Me</button></div>
+	//       </div>
+	//     )
+	//   }
 	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 172);
+	// }
 	
-	var _action_folder = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../action/action_folder\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	// function mapStateToProps (state) {
+	//   return { post: state.posts.post };
+	// }
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var ViewFolder = function (_Component) {
-	  _inherits(ViewFolder, _Component);
-	
-	  function ViewFolder(props) {
-	    _classCallCheck(this, ViewFolder);
-	
-	    var _this = _possibleConstructorReturn(this, (ViewFolder.__proto__ || Object.getPrototypeOf(ViewFolder)).call(this, props));
-	
-	    _this.state = { likesCount: 0 };
-	    _this.onLike = _this.onLike.bind(_this);
-	    return _this;
-	  }
-	
-	  _createClass(ViewFolder, [{
-	    key: 'onLike',
-	    value: function onLike() {
-	      var newLikesCount = this.state.likesCount + 1;
-	      this.setState({ likesCount: newLikesCount });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        'Likes : ',
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          this.state.likesCount
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'button',
-	            { onClick: this.onLike },
-	            'Like Me'
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return ViewFolder;
-	}(_react.Component);
-	
-	function mapStateToProps(state) {
-	  return { post: state.posts.post };
-	}
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, { fetchFolder: _action_folder.fetchFolder })(ViewFolder);
+	// export default connect(mapStateToProps, { fetchFolder })(ViewFolder)
+	"use strict";
 
 /***/ },
 /* 436 */
@@ -41255,390 +41220,6 @@
 
 /***/ },
 /* 467 */
-/*!**************************************!*\
-  !*** ./~/redux-promise/lib/index.js ***!
-  \**************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	exports.__esModule = true;
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	exports['default'] = promiseMiddleware;
-	
-	var _fluxStandardAction = __webpack_require__(/*! flux-standard-action */ 468);
-	
-	function isPromise(val) {
-	  return val && typeof val.then === 'function';
-	}
-	
-	function promiseMiddleware(_ref) {
-	  var dispatch = _ref.dispatch;
-	
-	  return function (next) {
-	    return function (action) {
-	      if (!_fluxStandardAction.isFSA(action)) {
-	        return isPromise(action) ? action.then(dispatch) : next(action);
-	      }
-	
-	      return isPromise(action.payload) ? action.payload.then(function (result) {
-	        return dispatch(_extends({}, action, { payload: result }));
-	      }, function (error) {
-	        return dispatch(_extends({}, action, { payload: error, error: true }));
-	      }) : next(action);
-	    };
-	  };
-	}
-	
-	module.exports = exports['default'];
-
-/***/ },
-/* 468 */
-/*!*********************************************!*\
-  !*** ./~/flux-standard-action/lib/index.js ***!
-  \*********************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	exports.__esModule = true;
-	exports.isFSA = isFSA;
-	exports.isError = isError;
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _lodashIsplainobject = __webpack_require__(/*! lodash.isplainobject */ 469);
-	
-	var _lodashIsplainobject2 = _interopRequireDefault(_lodashIsplainobject);
-	
-	var validKeys = ['type', 'payload', 'error', 'meta'];
-	
-	function isValidKey(key) {
-	  return validKeys.indexOf(key) > -1;
-	}
-	
-	function isFSA(action) {
-	  return _lodashIsplainobject2['default'](action) && typeof action.type !== 'undefined' && Object.keys(action).every(isValidKey);
-	}
-	
-	function isError(action) {
-	  return action.error === true;
-	}
-
-/***/ },
-/* 469 */
-/*!*****************************************!*\
-  !*** ./~/lodash.isplainobject/index.js ***!
-  \*****************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * lodash 3.2.0 (Custom Build) <https://lodash.com/>
-	 * Build: `lodash modern modularize exports="npm" -o ./`
-	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <https://lodash.com/license>
-	 */
-	var baseFor = __webpack_require__(/*! lodash._basefor */ 470),
-	    isArguments = __webpack_require__(/*! lodash.isarguments */ 418),
-	    keysIn = __webpack_require__(/*! lodash.keysin */ 471);
-	
-	/** `Object#toString` result references. */
-	var objectTag = '[object Object]';
-	
-	/**
-	 * Checks if `value` is object-like.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
-	 */
-	function isObjectLike(value) {
-	  return !!value && typeof value == 'object';
-	}
-	
-	/** Used for native method references. */
-	var objectProto = Object.prototype;
-	
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-	
-	/**
-	 * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objToString = objectProto.toString;
-	
-	/**
-	 * The base implementation of `_.forIn` without support for callback
-	 * shorthands and `this` binding.
-	 *
-	 * @private
-	 * @param {Object} object The object to iterate over.
-	 * @param {Function} iteratee The function invoked per iteration.
-	 * @returns {Object} Returns `object`.
-	 */
-	function baseForIn(object, iteratee) {
-	  return baseFor(object, iteratee, keysIn);
-	}
-	
-	/**
-	 * Checks if `value` is a plain object, that is, an object created by the
-	 * `Object` constructor or one with a `[[Prototype]]` of `null`.
-	 *
-	 * **Note:** This method assumes objects created by the `Object` constructor
-	 * have no inherited enumerable properties.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
-	 * @example
-	 *
-	 * function Foo() {
-	 *   this.a = 1;
-	 * }
-	 *
-	 * _.isPlainObject(new Foo);
-	 * // => false
-	 *
-	 * _.isPlainObject([1, 2, 3]);
-	 * // => false
-	 *
-	 * _.isPlainObject({ 'x': 0, 'y': 0 });
-	 * // => true
-	 *
-	 * _.isPlainObject(Object.create(null));
-	 * // => true
-	 */
-	function isPlainObject(value) {
-	  var Ctor;
-	
-	  // Exit early for non `Object` objects.
-	  if (!(isObjectLike(value) && objToString.call(value) == objectTag && !isArguments(value)) ||
-	      (!hasOwnProperty.call(value, 'constructor') && (Ctor = value.constructor, typeof Ctor == 'function' && !(Ctor instanceof Ctor)))) {
-	    return false;
-	  }
-	  // IE < 9 iterates inherited properties before own properties. If the first
-	  // iterated property is an object's own property then there are no inherited
-	  // enumerable properties.
-	  var result;
-	  // In most environments an object's own properties are iterated before
-	  // its inherited properties. If the last iterated property is an object's
-	  // own property then there are no inherited enumerable properties.
-	  baseForIn(value, function(subValue, key) {
-	    result = key;
-	  });
-	  return result === undefined || hasOwnProperty.call(value, result);
-	}
-	
-	module.exports = isPlainObject;
-
-
-/***/ },
-/* 470 */
-/*!************************************!*\
-  !*** ./~/lodash._basefor/index.js ***!
-  \************************************/
-/***/ function(module, exports) {
-
-	/**
-	 * lodash 3.0.3 (Custom Build) <https://lodash.com/>
-	 * Build: `lodash modularize exports="npm" -o ./`
-	 * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2016 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <https://lodash.com/license>
-	 */
-	
-	/**
-	 * The base implementation of `baseForIn` and `baseForOwn` which iterates
-	 * over `object` properties returned by `keysFunc` invoking `iteratee` for
-	 * each property. Iteratee functions may exit iteration early by explicitly
-	 * returning `false`.
-	 *
-	 * @private
-	 * @param {Object} object The object to iterate over.
-	 * @param {Function} iteratee The function invoked per iteration.
-	 * @param {Function} keysFunc The function to get the keys of `object`.
-	 * @returns {Object} Returns `object`.
-	 */
-	var baseFor = createBaseFor();
-	
-	/**
-	 * Creates a base function for methods like `_.forIn`.
-	 *
-	 * @private
-	 * @param {boolean} [fromRight] Specify iterating from right to left.
-	 * @returns {Function} Returns the new base function.
-	 */
-	function createBaseFor(fromRight) {
-	  return function(object, iteratee, keysFunc) {
-	    var index = -1,
-	        iterable = Object(object),
-	        props = keysFunc(object),
-	        length = props.length;
-	
-	    while (length--) {
-	      var key = props[fromRight ? length : ++index];
-	      if (iteratee(iterable[key], key, iterable) === false) {
-	        break;
-	      }
-	    }
-	    return object;
-	  };
-	}
-	
-	module.exports = baseFor;
-
-
-/***/ },
-/* 471 */
-/*!**********************************!*\
-  !*** ./~/lodash.keysin/index.js ***!
-  \**********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * lodash 3.0.8 (Custom Build) <https://lodash.com/>
-	 * Build: `lodash modern modularize exports="npm" -o ./`
-	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <https://lodash.com/license>
-	 */
-	var isArguments = __webpack_require__(/*! lodash.isarguments */ 418),
-	    isArray = __webpack_require__(/*! lodash.isarray */ 419);
-	
-	/** Used to detect unsigned integer values. */
-	var reIsUint = /^\d+$/;
-	
-	/** Used for native method references. */
-	var objectProto = Object.prototype;
-	
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-	
-	/**
-	 * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
-	 * of an array-like value.
-	 */
-	var MAX_SAFE_INTEGER = 9007199254740991;
-	
-	/**
-	 * Checks if `value` is a valid array-like index.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
-	 * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
-	 */
-	function isIndex(value, length) {
-	  value = (typeof value == 'number' || reIsUint.test(value)) ? +value : -1;
-	  length = length == null ? MAX_SAFE_INTEGER : length;
-	  return value > -1 && value % 1 == 0 && value < length;
-	}
-	
-	/**
-	 * Checks if `value` is a valid array-like length.
-	 *
-	 * **Note:** This function is based on [`ToLength`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength).
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
-	 */
-	function isLength(value) {
-	  return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-	}
-	
-	/**
-	 * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
-	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
-	 * @example
-	 *
-	 * _.isObject({});
-	 * // => true
-	 *
-	 * _.isObject([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObject(1);
-	 * // => false
-	 */
-	function isObject(value) {
-	  // Avoid a V8 JIT bug in Chrome 19-20.
-	  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
-	  var type = typeof value;
-	  return !!value && (type == 'object' || type == 'function');
-	}
-	
-	/**
-	 * Creates an array of the own and inherited enumerable property names of `object`.
-	 *
-	 * **Note:** Non-object values are coerced to objects.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Object
-	 * @param {Object} object The object to query.
-	 * @returns {Array} Returns the array of property names.
-	 * @example
-	 *
-	 * function Foo() {
-	 *   this.a = 1;
-	 *   this.b = 2;
-	 * }
-	 *
-	 * Foo.prototype.c = 3;
-	 *
-	 * _.keysIn(new Foo);
-	 * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
-	 */
-	function keysIn(object) {
-	  if (object == null) {
-	    return [];
-	  }
-	  if (!isObject(object)) {
-	    object = Object(object);
-	  }
-	  var length = object.length;
-	  length = (length && isLength(length) &&
-	    (isArray(object) || isArguments(object)) && length) || 0;
-	
-	  var Ctor = object.constructor,
-	      index = -1,
-	      isProto = typeof Ctor == 'function' && Ctor.prototype === object,
-	      result = Array(length),
-	      skipIndexes = length > 0;
-	
-	  while (++index < length) {
-	    result[index] = (index + '');
-	  }
-	  for (var key in object) {
-	    if (!(skipIndexes && isIndex(key, length)) &&
-	        !(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
-	      result.push(key);
-	    }
-	  }
-	  return result;
-	}
-	
-	module.exports = keysIn;
-
-
-/***/ },
-/* 472 */
 /*!****************************************!*\
   !*** ./app/components/view_folders.js ***!
   \****************************************/
@@ -41658,7 +41239,7 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 172);
 	
-	var _action_folder = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../action/action_folder\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _action_folder = __webpack_require__(/*! ../actions/action_folder */ 468);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -41676,7 +41257,9 @@
 	
 	    var _this = _possibleConstructorReturn(this, (ViewFolder.__proto__ || Object.getPrototypeOf(ViewFolder)).call(this, props));
 	
-	    _this.state = { clicked: false };
+	    _this.state = {
+	      clicked: false
+	    };
 	    _this.onFolderClick = _this.onFolderClick.bind(_this);
 	    return _this;
 	  }
@@ -41684,7 +41267,8 @@
 	  _createClass(ViewFolder, [{
 	    key: 'componentWillMount',
 	    value: function componentWillMount() {
-	      this.props.fetchPost(this.props.params.id);
+	      this.props.fetchFolders();
+	      console.log(this.props.folders);
 	    }
 	  }, {
 	    key: 'onFolderClick',
@@ -41692,27 +41276,24 @@
 	      this.setState({ clicked: true });
 	    }
 	  }, {
-	    key: 'render',
-	    value: function render() {
+	    key: 'renderFolders',
+	    value: function renderFolders() {
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        'Folder ',
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          this.state.clicked
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'button',
-	            { onClick: this.onFolderClick },
-	            'Like Me'
-	          )
-	        )
+	        this.props.folders.map(function (folder) {
+	          return _react2.default.createElement(
+	            'div',
+	            { key: folder.id },
+	            folder.folderName
+	          );
+	        })
 	      );
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return this.renderFolders();
 	    }
 	  }]);
 	
@@ -41720,10 +41301,118 @@
 	}(_react.Component);
 	
 	function mapStateToProps(state) {
-	  return { folder: state.posts.post };
+	  return { folders: state.data.folders };
 	}
 	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, { fetchFolder: _action_folder.fetchFolder })(ViewFolder);
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, { fetchFolders: _action_folder.fetchFolders })(ViewFolder);
+
+/***/ },
+/* 468 */
+/*!**************************************!*\
+  !*** ./app/actions/action_folder.js ***!
+  \**************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.UPDATE_FOLDER = exports.DELETE_FOLDER = exports.CREATE_FOLDER = exports.FETCH_FOLDERS = exports.FETCH_FOLDER = undefined;
+	exports.fetchFolder = fetchFolder;
+	exports.fetchFolders = fetchFolders;
+	exports.createFolder = createFolder;
+	exports.deleteFolder = deleteFolder;
+	exports.updateFolder = updateFolder;
+	
+	var _axios = __webpack_require__(/*! axios */ 440);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// TODO: if you think that some actions are needed or not needed
+	// notify the slack group so we can discuss
+	var FETCH_FOLDER = exports.FETCH_FOLDER = 'FETCH_FOLDER';
+	var FETCH_FOLDERS = exports.FETCH_FOLDERS = 'FETCH_FOLDERS';
+	var CREATE_FOLDER = exports.CREATE_FOLDER = 'CREATE_FOLDER';
+	var DELETE_FOLDER = exports.DELETE_FOLDER = 'DELETE_FOLDER';
+	var UPDATE_FOLDER = exports.UPDATE_FOLDER = 'UPDATE_FOLDER';
+	
+	// TODO: update axios requests with backend endpoints
+	function fetchFolder() {
+	  var request = _axios2.default.get('');
+	  return {
+	    type: FETCH_FOLDER,
+	    payload: request
+	  };
+	}
+	
+	function fetchFolders() {
+	  return function (dispatch) {
+	    _axios2.default.get('/api/folders').then(function (res) {
+	      dispatch({
+	        type: FETCH_FOLDERS,
+	        payload: res.data
+	      });
+	    }).catch(function (err) {});
+	  };
+	}
+	
+	function createFolder() {
+	  var request = _axios2.default.get('');
+	  return {
+	    type: CREATE_FOLDER,
+	    payload: request
+	  };
+	}
+	
+	function deleteFolder() {
+	  var request = _axios2.default.get('');
+	  return {
+	    type: DELETE_FOLDER,
+	    payload: request
+	  };
+	}
+	
+	function updateFolder() {
+	  var request = _axios2.default.get('');
+	  return {
+	    type: UPDATE_FOLDER,
+	    payload: request
+	  };
+	}
+
+/***/ },
+/* 469 */
+/*!************************************!*\
+  !*** ./~/redux-thunk/lib/index.js ***!
+  \************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	exports.__esModule = true;
+	function createThunkMiddleware(extraArgument) {
+	  return function (_ref) {
+	    var dispatch = _ref.dispatch;
+	    var getState = _ref.getState;
+	    return function (next) {
+	      return function (action) {
+	        if (typeof action === 'function') {
+	          return action(dispatch, getState, extraArgument);
+	        }
+	
+	        return next(action);
+	      };
+	    };
+	  };
+	}
+	
+	var thunk = createThunkMiddleware();
+	thunk.withExtraArgument = createThunkMiddleware;
+	
+	exports['default'] = thunk;
 
 /***/ }
 /******/ ]);
