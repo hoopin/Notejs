@@ -63,14 +63,14 @@ const NotesFolders = sequelize.define('NotesFolders', {
 
 })
 
-Notes.belongsToMany(Users, {through: NotesUsers, foreignKey:'noteId'})
-Users.belongsToMany(Notes, {through: NotesUsers, foreignKey:'userId'})
+Notes.belongsToMany(Users, {through: NotesUsers, foreignKey: 'noteId'})
+Users.belongsToMany(Notes, {through: NotesUsers, foreignKey: 'userId'})
 
-Folders.belongsToMany(Users, {through: FoldersUsers, foreignKey:'folderId' })
-Users.belongsToMany(Folders, {through: FoldersUsers, foreignKey:'userId'})
+Folders.belongsToMany(Users, {through: FoldersUsers, foreignKey: 'folderId'})
+Users.belongsToMany(Folders, {through: FoldersUsers, foreignKey: 'userId'})
 
-Notes.belongsToMany(Folders, {through: NotesFolders, foreignKey:'noteId'})
-Folders.belongsToMany(Notes, {through: NotesFolders, foreignKey:'folderId'})
+Notes.belongsToMany(Folders, {through: NotesFolders, foreignKey: 'noteId'})
+Folders.belongsToMany(Notes, {through: NotesFolders, foreignKey: 'folderId'})
 
 // // HELPER TO DROP ALL TABLES
 // sequelize.sync({force: true}).then(function () {

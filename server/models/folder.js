@@ -1,28 +1,46 @@
 const Folders = require('../db/db').Folders
-const Notes = require('../db/db').Notes
+const Users = require('../db/db').Users
 
-const addFolder = (folderName) => {
-  Folders
-    .create({folderName: folderName })
-    .then((newFolder) => {
-      const folder = newFolder
+const addFolder = (folderName, userId) => {
+  return Folders
+    .create({folderName: folderName})
+      .then((newFolder) => {
+        const folder = newFolder
+        return Users.findOne({
+          where: {id: userId}
+        })
+        .then((user) => {
+          return folder.setUsers(user)
+            .then(data => {
+              return data
+            })
+        })
+      })
+      .catch((err) => {
+        console.err('Error in creating folder of ', err)
+      })
+}
+
+const getUserFolders = (userId) => {
+  return Users
+    .findOne({
+      where: {id: userId}
+    })
+    .then(user => {
+      return user.getFolders({})
     })
 }
 
-const getFolders = () => {
-  return Folders.all()
-}
-
-const removeFolder = (folderName) => {
-  // Folders.findOne({
-  //   where: {folderName: folderName}
-  // })
-  //   .then(folder => {
-  //     folder.destroy()
-  //   })
-  //   .catch((err) => {
-  //     console.log('err in removing folder', err)
-  //   })
+const deleteFolder = (folderId) => {
+  return Folders.findOne({
+    where: {id: folderId}
+  })
+    .then(folder => {
+      folder.destroy()
+    })
+    .catch((err) => {
+      console.log('err in removing folder', err)
+    })
 }
 
 const updateFolderName = (folderId, newName) => {
@@ -33,10 +51,10 @@ const updateFolderName = (folderId, newName) => {
     	}
     })
     .then(folder => {
-    	return folder
-    	  .update({
-  		    folderName: newName
-      	})
+      return folder
+        .update({
+          folderName: newName
+        })
       })
 }
 
@@ -51,8 +69,8 @@ const getFoldersNotes = (folderId) => {
 
 module.exports = {
   addFolder: addFolder,
-  removeFolder: removeFolder,
+  deleteFolder: deleteFolder,
   updateFolderName: updateFolderName,
-  getFolders: getFolders,
+  getUserFolders: getUserFolders,
   getFoldersNotes: getFoldersNotes
 }

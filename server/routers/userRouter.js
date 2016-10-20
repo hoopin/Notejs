@@ -11,4 +11,7 @@ userRouter.route('/signup')
 userRouter.route('/logout')
   .get(Middleware.destroyToken, userController.LOGOUT)
 
+userRouter.route('/delete')
+  .delete(Middleware.destroyToken, userController.DELETE)
+
 module.exports = userRouter
