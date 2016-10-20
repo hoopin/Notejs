@@ -7,19 +7,12 @@ noteController.POST = (req, res) => {
   console.log('POST /notes')
   const input = req.body 
   Promise(function * () {
-    Notes.addNote(input.name , input.container)
+    Notes.addNote(input.name , input.container, input.fn)
   })
     .then(note => {
-      // This is trying to get inner Join to Work
-      if(input.folderId){
-        note.addNotesFolders(input.folderId)
-        .then(()=>{
-          console.log('Jane this should Work')
-        })
-      }else{
-      res.status(200).send(data)
-    }
-  })
+      console.log('INSIDE NOTE')
+      res.status(200).send(note)
+    })
 }
 
 // gets specific note  --> return array of updates for the sidebar

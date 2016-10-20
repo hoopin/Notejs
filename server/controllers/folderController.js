@@ -18,16 +18,9 @@ folderController.GET = (req, res) => {
 folderController.POST = (req, res) => {
   console.log('POST /folders')
   const data = req.body
-  Promise(function * () {
-    Folders.addFolder(data.folderName, data.notesInside)
-  })
-    .then(data => {
-      console.log('folder created!', data)
-      res.status(200).send(data)
-    })
-    .catch(err => {
-      console.log('folder not created', err)
-    })
+
+    Folders.addFolder(data.folderName)
+
 }
 
 // get specific oflder and it contains notes
