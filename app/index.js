@@ -5,9 +5,11 @@ import { createStore, applyMiddleware } from 'redux'
 import { Router, browserHistory } from 'react-router'
 import reducers from './reducers'
 import routes from './routes'
-import promise from 'redux-promise'
+// import promise from 'redux-promise'
+import reduxThunk from 'redux-thunk'
 
-const createStoreWithMiddleware = applyMiddleware(promise)(createStore)
+const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore)
+// const createStoreWithMiddleware = applyMiddleware(promise)(createStore)
 
 render(
   <Provider store={createStoreWithMiddleware(reducers)}>

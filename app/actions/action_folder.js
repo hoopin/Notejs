@@ -18,10 +18,16 @@ export function fetchFolder () {
 }
 
 export function fetchFolders () {
-  const request = axios.get(`/api/folders`)
-  return {
-    type: FETCH_FOLDERS,
-    payload: request
+  return (dispatch) => {
+    axios.get(`/api/folders`)
+    .then((res) => {
+      dispatch({
+        type: FETCH_FOLDERS,
+        payload: res.data
+      })
+    })
+    .catch((err) => {
+    })
   }
 }
 

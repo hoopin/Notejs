@@ -46,9 +46,13 @@
     "redux": "^3.6.0",
     "redux-form": "^6.1.1",
     "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.1.0",
     "request": "^2.75.0",
     "sequelize": "^3.24.4",
     "standard": "^8.4.0",
     "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "babel-preset-stage-3": "^6.17.0"
   }
 }

@@ -1,36 +1,52 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchFolder } from '../action/action_folder'
+import { fetchFolders } from '../actions/action_folder'
 
 class ViewFolder extends Component {
 
   constructor (props) {
     super(props)
-    this.state = {clicked: false}
+    this.state = {
+      clicked: false
+    }
     this.onFolderClick = this.onFolderClick.bind(this)
   }
 
   componentWillMount () {
-    this.props.fetchPost(this.props.params.id)
+    this.props.fetchFolders()
+    console.log(this.props.folders)
   }
 
   onFolderClick () {
     this.setState({clicked: true})
   }
 
-  render () {
+  renderFolders () {
     return (
       <div>
-        Folder <span>{this.state.clicked}</span>
-        <div><button onClick={this.onFolderClick}>Like Me</button></div>
+        {
+          this.props.folders.map(folder => {
+            return (
+              <div key={folder.id}>
+                {
+                folder.folderName
+              }
+              </div>
+            )
+          })
+      }
       </div>
     )
+  }
+
+  render () {
+    return this.renderFolders()
   }
 
 }
 
 function mapStateToProps (state) {
-  return { folder: state.posts.post }
+  return { folders: state.data.folders }
 }
 
-export default connect(mapStateToProps, { fetchFolder })(ViewFolder)
+export default connect(mapStateToProps, { fetchFolders })(ViewFolder)
