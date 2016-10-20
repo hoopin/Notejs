@@ -1,33 +1,50 @@
-// import React, { Component } from 'react'
-// import { connect } from 'react-redux'
-// // import { fetchFolder } from '../action/action_folder'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchFolder } from '../actions/action_folder'
 
-// class ViewFolder extends Component {
 
-//   constructor (props) {
-//     super(props)
-//     this.state = {likesCount: 0}
-//     this.onLike = this.onLike.bind(this)
-//   }
+class ViewFolder extends Component {
 
-//   onLike () {
-//     let newLikesCount = this.state.likesCount + 1
-//     this.setState({likesCount: newLikesCount})
-//   }
+  constructor (props) {
+    super(props)
+    this.state = {
+      clicked: false
+    }
+    this.onFolderClick = this.onFolderClick.bind(this)
+  }
 
-//   render () {
-//     return (
-//       <div>
-//         Likes : <span>{this.state.likesCount}</span>
-//         <div><button onClick={this.onLike}>Like Me</button></div>
-//       </div>
-//     )
-//   }
+  componentWillMount () {
+    this.props.fetchFolder(this.props.params.id)
+    console.log('rendering folder:', this.props.params.id)
+  }
 
-// }
+  onFolderClick (id) {
+    this.setState({clicked: true})
+    console.log('I am clicking folder ID: ', id)
+  }
 
-// function mapStateToProps (state) {
-//   return { post: state.posts.post };
-// }
+  renderFolder () {
+    if (this.props.currentFolder === null) {
+      return <div>Loading folder...</div>
+    }
+    console.log('folder rendering', this.props.currentFolder)
+    return (
+      <div>{this.props.currentFolder.message}</div>
+    )
+  }
 
-// export default connect(mapStateToProps, { fetchFolder })(ViewFolder)
+  render () {
+    return (
+      <div>
+        { this.renderFolder() }
+      </div>
+      )
+  }
+
+}
+
+function mapStateToProps (state) {
+  return { currentFolder: state.data.currentFolder }
+}
+
+export default connect(mapStateToProps, { fetchFolder })(ViewFolder)

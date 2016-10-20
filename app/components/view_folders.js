@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchFolders } from '../actions/action_folder'
+import { Link } from 'react-router'
 
-class ViewFolder extends Component {
+class ViewFolders extends Component {
 
   constructor (props) {
     super(props)
@@ -17,30 +18,27 @@ class ViewFolder extends Component {
     console.log(this.props.folders)
   }
 
-  onFolderClick () {
+  onFolderClick (id) {
     this.setState({clicked: true})
+    console.log('I am clicking folder ID: ', id)
   }
 
   renderFolders () {
-    return (
-      <div>
-        {
-          this.props.folders.map(folder => {
-            return (
-              <div key={folder.id}>
-                {
-                folder.folderName
-              }
-              </div>
-            )
-          })
-      }
-      </div>
-    )
+    return this.props.folders.map(folder => {
+      return (
+        <Link to={'folders/' + folder.id} onClick={this.onFolderClick.bind(this, folder.id)} key={folder.id}>
+          <strong> {folder.folderName} </strong>
+        </Link>
+      )
+    })
   }
 
   render () {
-    return this.renderFolders()
+    return (
+      <div>
+        { this.renderFolders() }
+      </div>
+      )
   }
 
 }
@@ -49,4 +47,4 @@ function mapStateToProps (state) {
   return { folders: state.data.folders }
 }
 
-export default connect(mapStateToProps, { fetchFolders })(ViewFolder)
+export default connect(mapStateToProps, { fetchFolders })(ViewFolders)
