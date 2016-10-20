@@ -20,6 +20,16 @@ userController.SIGNUP = (req, res) => {
   })
 }
 
+userController.DELETE = (req, res) => {
+  const userId = req.body.userId
+  User.deleteUser(userId)
+  .then(() => {
+    res.status(200).json({
+      message: 'Deleted User'
+    })
+  })
+}
+
 // logout user
 userController.LOGOUT = (req, res) => {
   res.status(200).json({

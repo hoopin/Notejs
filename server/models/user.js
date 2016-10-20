@@ -95,6 +95,20 @@ let verifyEmail = (req, res, next) => {
   })
 }
 
+let deleteUser = (userId) => {
+  return Users.findOne({
+    where: {
+      id: userId
+    }
+  })
+  .then(user => {
+    return user.destroy()
+    .then(() => {
+      console.log('Successfully deleted user')
+    })
+  })
+}
+
 module.exports = {
   register: register,
   verifyPassword: verifyPassword,
@@ -102,5 +116,6 @@ module.exports = {
   verifyAuth: verifyAuth,
   destroyToken: destroyToken,
   hashPassword: hashPassword,
-  verifyEmail: verifyEmail
+  verifyEmail: verifyEmail,
+  deleteUser: deleteUser
 }

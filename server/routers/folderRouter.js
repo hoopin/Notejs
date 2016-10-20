@@ -2,8 +2,11 @@ const folderRouter = require('express').Router()
 const folderController = require('../controllers/folderController')
 
 folderRouter.route('/')
-  .get(folderController.GET)
   .post(folderController.POST)
+  .delete(folderController.DELETE_FOLDER)
+
+folderRouter.route('/home/:userId')
+  .get(folderController.GET_USER_FOLDERS)
 
 folderRouter.route('/:folderId')
   .get(folderController.GET_FOLDERID)

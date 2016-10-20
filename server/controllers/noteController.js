@@ -34,7 +34,7 @@ noteController.DELETE_NOTE = (req, res) => {
   const noteId = req.params.noteId
   Notes.deleteNote(noteId)
     .then((note) => {
-      res.status(200).send("Note deleted")
+      res.status(200).send('Note deleted')
     })
 }
 
