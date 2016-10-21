@@ -93,3 +93,15 @@ body {
     6px 6px 0 #fff, 7px 7px 0 rgba(0, 0, 0, .1),
     9px 9px 0 #fff, 10px 10px 0 rgba(0, 0, 0, .1);
 }
+
+.noteView {
+  height: 100%;
+  padding: 50px 100px 100px 100px;
+  margin-top: -20px;
+  background-color: white;
+}
+
+.editNoteBlock {
+  padding: 10px;
+  border: solid 1px black;
+}

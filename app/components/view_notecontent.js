@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchNote } from '../actions/action_note'
 import { Link } from 'react-router'
+import AppBar, {muiTheme} from 'material-ui/AppBar'
+import FlatButton from 'material-ui/FlatButton'
 
 class ViewNoteContent extends Component {
 
@@ -30,9 +32,12 @@ class ViewNoteContent extends Component {
     console.log(' rendering note content in ->', this.props.currentNote)
     return (
       <div>
-        <h1> {this.props.currentNote.notesName ? this.props.currentNote.notesName : 'No name note' } </h1>
-        <div> {this.props.currentNote.content} </div>
-        <Link to={'editNote/' + this.props.params.id}> EDIT NOTE </Link>
+        <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' />
+        <div className='noteView'>
+          <h1> {this.props.currentNote.notesName ? this.props.currentNote.notesName : 'No name note' } </h1>
+          <div> {this.props.currentNote.content} </div>
+          <Link to={'editNote/' + this.props.params.id}> EDIT NOTE </Link>
+        </div>
       </div>
     )
   }
