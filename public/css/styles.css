@@ -1,0 +1,113 @@
+body {
+  background-color: #DADADA;
+}
+
+.navbar {
+  background-color: #03A9F4 !important;
+}
+
+.authButtons {
+  color: white !important;
+  margin-top: 5px !important;
+}
+
+.authButtons:hover {
+  font-weight: bold !important;
+  background-color: white !important;
+  border: solid 1px white;
+  border-radius: 3px;
+  color: #1EAAF1 !important;
+}
+
+.folderView {
+  float: left;
+  display: inline-block;
+}
+
+.folder {
+	display:inline-block;
+	position:relative;
+	width:3.5em;
+  margin: 50px;
+	border-bottom:1em solid #03A9F4;
+	border-right:.5em solid transparent;
+}
+
+.folderName {
+  color: black;
+  margin-left: 48px
+}
+
+.folder:before {
+	/*middle level*/
+	content:"\2585"; /*this is the secret, shhhhhh*/
+	text-indent:-0.05em;
+	font-size:6em;
+	color:#03A9F4;
+	line-height:.2em;
+	position:absolute;
+	overflow:visible;
+	width:.87em;
+	left:.05em;
+	top:0.1em;
+	background:#fff;
+	transition:.218s ease;
+}
+
+.folder:after{
+	/*highest level*/
+  content:"";
+	position:absolute;
+	width:3.5em;
+	top:.3em;
+	right:-3em;
+	border-bottom:1em solid #03A9F4;
+	border-left:.5em solid transparent;
+}
+
+.folder:hover:before{
+	line-height:.4em;
+	top:0;
+}
+
+/* Notes */
+
+.noteView {
+
+}
+
+.note {
+  margin: 20px;
+  padding: 20px;
+  height: 200px;
+  font: 14px/22px 'PT Serif', Georgia, serif;
+  color: #222;
+  text-align: justify;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.note h1 {
+  margin: 10px 0;
+  font: italic 700 22px/1 'PT Serif',Georgia,serif;
+  color: #333;
+}
+
+/*.note code
+{ color: #28e }
+
+.note::before,
+.note::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  display: block;
+  width: 150px;
+  height: 250px;
+  background: inherit;
+  box-shadow: inherit;
+  transform: rotate(2deg);
+}
+
+.note::after
+{ transform: rotate(-1deg) }*/

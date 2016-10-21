@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchFolders, setCurrentFolder } from '../actions/action_folder'
 import { Link } from 'react-router'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 class ViewFolders extends Component {
 
@@ -26,9 +27,12 @@ class ViewFolders extends Component {
   renderFolders () {
     return this.props.folders.map(folder => {
       return (
-        <Link to={'folders/' + folder.id} onClick={this.onFolderClick.bind(this, folder.id)} key={folder.id}>
-          <strong> {folder.folderName} </strong>
-        </Link>
+        <div className='folderView'>
+          <Link to={'folders/' + folder.id} className='folder' onClick={this.onFolderClick.bind(this, folder.id)} key={folder.id}>
+          </Link>
+          <br />
+          <span className='folderName'><strong> {folder.folderName} </strong></span>
+        </div>
       )
     })
   }
