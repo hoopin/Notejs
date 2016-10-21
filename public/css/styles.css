@@ -72,42 +72,24 @@ body {
 
 /* Notes */
 
-.noteView {
-
-}
-
 .note {
-  margin: 20px;
-  padding: 20px;
+  background-color: #fff;
   height: 200px;
-  font: 14px/22px 'PT Serif', Georgia, serif;
-  color: #222;
-  text-align: justify;
-  background: #fff;
-  box-shadow: 0 0 5px rgba(0,0,0,.2);
-}
-
-.note h1 {
-  margin: 10px 0;
-  font: italic 700 22px/1 'PT Serif',Georgia,serif;
-  color: #333;
-}
-
-/*.note code
-{ color: #28e }
-
-.note::before,
-.note::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  display: block;
+  padding: 20px;
   width: 150px;
-  height: 250px;
-  background: inherit;
-  box-shadow: inherit;
-  transform: rotate(2deg);
+  display: inline-block;
+  position: relative;
+  margin: 30px;
+  -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, .3),
+    3px 3px 0 #fff, 4px 4px 0 rgba(0, 0, 0, .2),
+    6px 6px 0 #fff, 7px 7px 0 rgba(0, 0, 0, .1),
+    9px 9px 0 #fff, 10px 10px 0 rgba(0, 0, 0, .1);
+  -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, .3),
+    3px 3px 0 #fff, 4px 4px 0 rgba(0, 0, 0, .2),
+    6px 6px 0 #fff, 7px 7px 0 rgba(0, 0, 0, .1),
+    9px 9px 0 #fff, 10px 10px 0 rgba(0, 0, 0, .1);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, .3),
+    3px 3px 0 #fff, 4px 4px 0 rgba(0, 0, 0, .2),
+    6px 6px 0 #fff, 7px 7px 0 rgba(0, 0, 0, .1),
+    9px 9px 0 #fff, 10px 10px 0 rgba(0, 0, 0, .1);
 }
-
-.note::after
-{ transform: rotate(-1deg) }*/

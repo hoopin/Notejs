@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { fetchFolders, createFolder } from '../actions/action_folder'
 import { Link } from 'react-router'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import AppBar, {muiTheme} from 'material-ui/AppBar'
+import FlatButton from 'material-ui/FlatButton'
 
 class ViewFolders extends Component {
 
@@ -39,6 +41,10 @@ class ViewFolders extends Component {
       'folderName': this.state.newName,
       'userId': 1
     })
+    setTimeout(() => {
+      this.props.fetchFolders()
+      this.renderFolders()
+    }, 300)
     // this.setState({newName: ''})
   }
 
@@ -72,8 +78,16 @@ class ViewFolders extends Component {
   render () {
     return (
       <div>
+        <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={<form onSubmit={this.onHandleSubmit}>
+          <input
+            type='text'
+            placeholder='new folder name'
+            value={this.state.newName}
+            onChange={this.handleName}
+          />
+          <input type='submit' value='Create New Folder' />
+        </form>} />
         <div>{ this.renderFolders() }</div>
-        <div>{ this.renderForm() } </div>
       </div>
       )
   }
