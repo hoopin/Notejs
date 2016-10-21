@@ -37,7 +37,8 @@ export function createNote (props) {
     axios.post(`/api/notes`, props)
     .then((res) => {
       dispatch({
-        type: CREATE_NOTE
+        type: CREATE_NOTE,
+        payload: res.data
       })
     })
     .catch((err) => {

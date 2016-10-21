@@ -45,7 +45,7 @@ class ViewFolder extends Component {
 
   renderForm () {
     if (this.props.currentFolder === null) {
-      return <div />
+      return <div> Load </div>
     }
 
     return (
