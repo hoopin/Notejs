@@ -40,11 +40,19 @@ export function fetchFolders () {
   }
 }
 
-export function createFolder () {
-  const request = axios.get(``)
-  return {
-    type: CREATE_FOLDER,
-    payload: request
+export function createFolder (props) {
+  return (dispatch) => {
+    console.log('inside the create folder callback', props)
+    axios.post(`/api/folders`, props)
+    .then((res) => {
+      dispatch({
+        type: CREATE_FOLDER,
+        payload: res.data
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 }
 
