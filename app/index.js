@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { Router, browserHistory } from 'react-router'
 import reducers from './reducers'
 import routes from './routes'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 // import promise from 'redux-promise'
 import reduxThunk from 'redux-thunk'
 
@@ -12,7 +13,9 @@ const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore)
 // const createStoreWithMiddleware = applyMiddleware(promise)(createStore)
 
 render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <Router history={browserHistory} routes={routes} />
-  </Provider>
+  <MuiThemeProvider>
+    <Provider store={createStoreWithMiddleware(reducers)}>
+      <Router history={browserHistory} routes={routes} />
+    </Provider>
+  </MuiThemeProvider>
 , document.getElementById('app'))
