@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchFolder } from '../actions/action_folder'
 import { createNote } from '../actions/action_note'
 import { Link } from 'react-router'
+import LinearProgress from 'material-ui/LinearProgress'
 
 class ViewFolder extends Component {
 
@@ -63,12 +64,12 @@ class ViewFolder extends Component {
 
   renderFolder () {
     if (this.props.currentFolder === null) {
-      return <div>Loading folder...</div>
+      return <LinearProgress mode="indeterminate" />
     }
     console.log(' rendering notes in folder', this.props.currentFolder)
     return this.props.currentFolder.map((note) => {
       return (
-        <Link to={'notes/' + note.id} onClick={this.onFolderClick.bind(this, note.id)} key={note.id}>
+        <Link to={'notes/' + note.id} className='note' onClick={this.onFolderClick.bind(this, note.id)} key={note.id}>
           <strong> {note.notesName ? note.notesName : 'No name note'} </strong>
         </Link>
       )
