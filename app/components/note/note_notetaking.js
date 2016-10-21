@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {Editor, EditorState, RichUtils, convertToRaw, convertFromRaw} from 'draft-js'
+import AppBar, {muiTheme} from 'material-ui/AppBar'
+import FlatButton from 'material-ui/FlatButton'
 // import styles from './style.css'
 
 class MyEditor extends Component {
@@ -28,17 +30,22 @@ class MyEditor extends Component {
   render () {
     console.log("this.props.noteData in david's", this.props.noteData)
     return (
-      <div id='content'>
-        <h1>Notejs</h1>
-        <div id='editor'>
-          <button onClick={this._onBoldClick.bind(this)}>Bold</button>
-          <button onClick={this._onUnderlineClick.bind(this)}>Underline</button>
-          <button onClick={this._onItalicClick.bind(this)}>Italic</button>
-          <button>Code Block</button>
-          <Editor placeholder='Type Here' editorState={this.state.editorState} onChange={this.onChange} />
-          <button onClick={this._createContent.bind(this)}>Log content</button>
+      <div>
+        <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' />
+
+        <div id='content' className='noteView'>
+          <div id='editor'>
+            <button onClick={this._createContent.bind(this)}>Save content</button>
+            <br /><br />
+            <button onClick={this._onBoldClick.bind(this)}>Bold</button>
+            <button onClick={this._onUnderlineClick.bind(this)}>Underline</button>
+            <button onClick={this._onItalicClick.bind(this)}>Italic</button>
+            <button>Code Block</button>
+            <Editor className='editNoteBlock' placeholder='Type Here' editorState={this.state.editorState} onChange={this.onChange} />
+          </div>
         </div>
       </div>
+
     )
   }
 }
