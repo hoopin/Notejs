@@ -4,6 +4,10 @@ import { fetchFolder } from '../actions/action_folder'
 import { createNote } from '../actions/action_note'
 import { Link } from 'react-router'
 import LinearProgress from 'material-ui/LinearProgress'
+import promiseMiddleware from 'redux-promise'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import AppBar, {muiTheme} from 'material-ui/AppBar'
+import FlatButton from 'material-ui/FlatButton'
 
 class ViewFolder extends Component {
 
@@ -37,11 +41,14 @@ class ViewFolder extends Component {
     e.preventDefault()
     this.props.createNote({
       'notesName': this.state.newName,
-      'content': '',
+      'content': 'Testing content',
       'folderId': this.props.params.id
     })
+    setTimeout(() => {
+      this.props.fetchFolder(this.props.params.id)
+      this.renderFolder()
+    }, 300)
     // this.setState({newName: ''})
-    // this.props.fetchFolder(this.props.params.id)
   }
 
   renderForm () {
@@ -66,7 +73,6 @@ class ViewFolder extends Component {
     if (this.props.currentFolder === null) {
       return <LinearProgress mode="indeterminate" />
     }
-    console.log(' rendering notes in folder', this.props.currentFolder)
     return this.props.currentFolder.map((note) => {
       return (
         <Link to={'notes/' + note.id} className='note' onClick={this.onFolderClick.bind(this, note.id)} key={note.id}>
@@ -79,8 +85,16 @@ class ViewFolder extends Component {
   render () {
     return (
       <div>
+        <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={ <form onSubmit={this.onHandleSubmit}>
+          <input
+            type='text'
+            placeholder='new note name'
+            value={this.state.newName}
+            onChange={this.handleName}
+          />
+          <input type='submit' value='Create New Note' />
+        </form>} />
         <div>{ this.renderFolder() }</div>
-        <div>{ this.renderForm() }</div>
       </div>
       )
   }
