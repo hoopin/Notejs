@@ -78,7 +78,6 @@ const updateNote = (noteId, content) => {
 module.exports = {
   addNote: addNote,
   deleteNote: deleteNote,
-  changeNoteName: changeNoteName,
   updateNote: updateNote,
   getNote: getNote
 }

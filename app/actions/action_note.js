@@ -31,11 +31,18 @@ export function fetchNote (id) {
   }
 }
 
-export function createNote () {
-  const request = axios.get(``)
-  return {
-    type: CREATE_NOTE,
-    payload: request
+export function createNote (props) {
+  return (dispatch) => {
+    console.log('inside the create note callback', props)
+    axios.post(`/api/notes`, props)
+    .then((res) => {
+      dispatch({
+        type: CREATE_NOTE
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 }
 

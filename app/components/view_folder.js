@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchFolder } from '../actions/action_folder'
+import { createNote } from '../actions/action_note'
 import { Link } from 'react-router'
 
 class ViewFolder extends Component {
@@ -8,9 +9,13 @@ class ViewFolder extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      clicked: false
+      clicked: false,
+      newName: ''
     }
     this.onFolderClick = this.onFolderClick.bind(this)
+    this.renderForm = this.renderForm.bind(this)
+    this.onHandleSubmit = this.onHandleSubmit.bind(this)
+    this.handleName = this.handleName.bind(this)
   }
 
   componentWillMount () {
@@ -18,9 +23,42 @@ class ViewFolder extends Component {
     console.log('rendering folder:', this.props.params.id)
   }
 
+  handleName (e) {
+    this.setState({newName: e.target.value})
+  }
+
   onFolderClick (id) {
     this.setState({clicked: true})
     console.log('I am clicking folder ID: ', id)
+  }
+
+  onHandleSubmit (e) {
+    e.preventDefault()
+    this.props.createNote({
+      'notesName': this.state.newName,
+      'content': '',
+      'folderId': this.props.params.id
+    })
+    // this.setState({newName: ''})
+    // this.props.fetchFolder(this.props.params.id)
+  }
+
+  renderForm () {
+    if (this.props.currentFolder === null) {
+      return <div />
+    }
+
+    return (
+      <form onSubmit={this.onHandleSubmit}>
+        <input
+          type='text'
+          placeholder='new note name'
+          value={this.state.newName}
+          onChange={this.handleName}
+        />
+        <input type='submit' value='Create New Note' />
+      </form>
+    )
   }
 
   renderFolder () {
@@ -40,7 +78,8 @@ class ViewFolder extends Component {
   render () {
     return (
       <div>
-        { this.renderFolder() }
+        <div>{ this.renderFolder() }</div>
+        <div>{ this.renderForm() }</div>
       </div>
       )
   }
@@ -51,4 +90,4 @@ function mapStateToProps (state) {
   return { currentFolder: state.data.currentFolder }
 }
 
-export default connect(mapStateToProps, { fetchFolder })(ViewFolder)
+export default connect(mapStateToProps, { fetchFolder, createNote })(ViewFolder)
