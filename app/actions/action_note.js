@@ -8,11 +8,18 @@ export const CREATE_NOTE = 'CREATE_NOTE'
 export const UPDATE_NOTE = 'UPDATE_NOTE'
 
 // TODO: update axios requests with backend endpoints
-export function deleteNote () {
-  const request = axios.get(``)
-  return {
-    type: DELETE_NOTE,
-    payload: request
+export function deleteNote (id) {
+  return (dispatch) => {
+    axios.delete(`/api/notes/${id}`)
+    .then((res) => {
+      dispatch({
+        type: DELETE_NOTE,
+        payload: res.data
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 }
 
@@ -47,10 +54,18 @@ export function createNote (props) {
   }
 }
 
-export function updateNote () {
-  const request = axios.get(``)
-  return {
-    type: UPDATE_NOTE,
-    payload: request
+export function updateNote (props) {
+  return (dispatch) => {
+    console.log('inside the update note callback', props)
+    axios.put(`/api/notes/${props.id}`, props)
+    .then((res) => {
+      dispatch({
+        type: UPDATE_NOTE,
+        payload: res.data
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchNote } from '../actions/action_note'
+import { fetchNote, updateNote, deleteNote } from '../actions/action_note'
 import MyEditor from './note/note_notetaking'
 
 class ViewNoteEditContent extends Component {
@@ -39,7 +39,7 @@ class ViewNoteEditContent extends Component {
 
   render () {
     return (
-      <MyEditor noteData={this.props.currentNote.content} />
+      <MyEditor idData={this.props.params.id} updateNoteData={this.props.updateNote} noteData={this.props.currentNote.content} deleteNoteData={this.props.deleteNote}/>
       )
   }
 
@@ -50,4 +50,4 @@ function mapStateToProps (state) {
   return { currentNote: state.data.currentNote }
 }
 
-export default connect(mapStateToProps, { fetchNote })(ViewNoteEditContent)
+export default connect(mapStateToProps, { fetchNote, updateNote, deleteNote })(ViewNoteEditContent)
