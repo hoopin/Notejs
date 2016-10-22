@@ -1,13 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 import { createUser } from '../actions/action_user'
 import { Link } from 'react-router'
 
 class NewUser extends Component {
+  onSubmit (props) {
+    console.log('PropTypes?!', PropTypes.object)
+    this.props.createUser(props)
+    console.log('this.context', this.context)
+    this.context.router.push('/')
+  }
+
   render () {
     const { fields: { firstName, lastName, email, password }, handleSubmit } = this.props
     return (
-      <form onSubmit={handleSubmit(this.props.createUser)}>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <h3>Sign up</h3>
 
         <div className={`form-group ${firstName.touched && firstName.invalid ? 'has-danger' : ''}`}>
@@ -28,7 +35,7 @@ class NewUser extends Component {
 
         <div className={`form-group ${email.touched && email.invalid ? 'has-danger' : ''}`}>
           <label>email</label>
-          <textarea type='text' className='form-control' {...email} />
+          <input type='text' className='form-control' {...email} />
           <div className='text-help'>
             {email.touched ? email.error : ''}
           </div>
@@ -36,7 +43,7 @@ class NewUser extends Component {
 
         <div className={`form-group ${password.touched && password.invalid ? 'has-danger' : ''}`}>
           <label>password</label>
-          <textarea type='text' className='form-control' {...password} />
+          <input type='password' className='form-control' {...password} />
           <div className='text-help'>
             {password.touched ? password.error : ''}
           </div>
@@ -47,6 +54,10 @@ class NewUser extends Component {
       </form>
     )
   }
+}
+
+NewUser.contextTypes = {
+  router: PropTypes.object
 }
 
 function validate (values) {

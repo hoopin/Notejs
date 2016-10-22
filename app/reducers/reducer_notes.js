@@ -6,7 +6,7 @@ import { FETCH_NOTE } from '../actions/action_note'
 const INITIAL_STATE = {
   folders: [], // Each folder in array has object props of {id: unique number, name: string, notes: []}
   currentNote: null,
-  currentFolder: [],
+  currentFolder: []
 }
 
 // TODO: if needed action, create a case
