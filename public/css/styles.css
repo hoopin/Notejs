@@ -16,6 +16,40 @@ body {
   margin-top: 5px !important;
 }
 
+.stylingDiv {
+  background-color: #272726;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  width: 270px;
+}
+
+.noteStylingButtons {
+  background-color: #272726;
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+.noteStylingButtons:hover {
+  color: #03A9F4 !important;
+}
+
+.noteBottomButtons {
+  margin-right: 15px !important;
+}
+
+.noteBottomButtons * {
+  color: white !important;
+}
+
+.noteBottomButtons button {
+  background-color: #03A9F4 !important;
+  color: white !important;
+  margin-right: 15px !important;
+  border-radius: 5px !important;
+}
+
 .title {
   font-size: 90px;
   text-align: center;
