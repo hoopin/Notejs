@@ -6,6 +6,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar, {muiTheme} from 'material-ui/AppBar'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
+import MenuItem from 'material-ui/MenuItem'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+import Drawer from 'material-ui/Drawer';
+
 
 class ViewFolders extends Component {
 
@@ -13,7 +17,8 @@ class ViewFolders extends Component {
     super(props)
     this.state = {
       clicked: false,
-      newName: ''
+      newName: '',
+      open: false
     }
     this.onFolderClick = this.onFolderClick.bind(this)
     this.renderForm = this.renderForm.bind(this)
@@ -76,10 +81,18 @@ class ViewFolders extends Component {
     })
   }
 
+  handleToggle(){ 
+    this.setState({open: !this.state.open})
+  }
+
+  handleClose(){
+    this.setState({open: false})
+  }
+
   render () {
     return (
       <div>
-        <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={<form onSubmit={this.onHandleSubmit}>
+        <AppBar title='NoteJS' onLeftIconButtonTouchTap={this.handleToggle.bind(this)} className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={<form onSubmit={this.onHandleSubmit}> 
           <TextField
             className='addInputField'
             placeholder='Create new folder'
@@ -88,6 +101,18 @@ class ViewFolders extends Component {
           />
           <RaisedButton label='Submit' type='submit' />
         </form>} />
+        <Drawer
+          docked={false}
+          width={200}
+          open={this.state.open}
+          onRequestChange={(open) => this.setState({open})}
+        >
+          <MenuItem >Organizations</MenuItem>
+          <MenuItem >Private Folders</MenuItem>
+          <MenuItem >Edit Profile</MenuItem>
+          <MenuItem >Preferences</MenuItem>
+          <MenuItem >Sign Out</MenuItem>
+        </Drawer>
         <div>{ this.renderFolders() }</div>
       </div>
       )
