@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
+import {Editor, EditorState, RichUtils, convertToRaw, convertFromRaw} from 'draft-js'
+import AppBar, {muiTheme} from 'material-ui/AppBar'
+import FlatButton from 'material-ui/FlatButton'
 import { connect } from 'react-redux'
-import { Editor, EditorState, RichUtils, convertToRaw, convertFromRaw } from 'draft-js'
+
 
 class MyEditor extends Component {
   constructor (props) {
@@ -18,10 +21,13 @@ class MyEditor extends Component {
     let content = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()))
     let saveObj = {id: noteId,
     content: content}
+    // console.log("update function:", this.props.updateNoteData)
     this.props.updateNoteData(saveObj)
   }
   _deleteNote () {
-    console.log(updateNote);
+    let noteId = this.props.idData
+    // console.log("this.pro÷ps", this.props);
+    this.props.deleteNoteData(noteId)
   }
   _onBoldClick () {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'))
@@ -35,18 +41,24 @@ class MyEditor extends Component {
   render () {
     console.log("this.props.noteData in david's", this.props.noteData)
     return (
-      <div id='content'>
-        <h1>Notejs</h1>
-        <div id='editor'>
-          <button onClick={this._onBoldClick.bind(this)}>Bold</button>
-          <button onClick={this._onUnderlineClick.bind(this)}>Underline</button>
-          <button onClick={this._onItalicClick.bind(this)}>Italic</button>
-          <button>Code Block</button>
-          <Editor placeholder='Type Here' editorState={this.state.editorState} onChange={this.onChange} />
-          <button onClick={this._saveContent.bind(this)}>Save</button>
-          <button onClick={this._deleteNote.bind(this)}>DELETENOTE</button>
+
+      <div>
+        <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' />
+
+        <div id='content' className='noteView'>
+          <div id='editor'>
+            <button onClick={this._onBoldClick.bind(this)}>Bold</button>
+            <button onClick={this._onUnderlineClick.bind(this)}>Underline</button>
+            <button onClick={this._onItalicClick.bind(this)}>Italic</button>
+            <button>Code Block</button>
+            <Editor placeholder='Type Here' editorState={this.state.editorState} onChange={this.onChange} />
+            <button onClick={this._saveContent.bind(this)}>Save</button>
+            <button onClick={this._deleteNote.bind(this)}>DELETENOTE</button>
+          </div>
         </div>
+
       </div>
+
     )
   }
 }
