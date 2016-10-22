@@ -3,6 +3,8 @@ import {Editor, EditorState, RichUtils, convertToRaw, convertFromRaw} from 'draf
 import AppBar, {muiTheme} from 'material-ui/AppBar'
 import FlatButton from 'material-ui/FlatButton'
 import { connect } from 'react-redux'
+// let currentNoteData = convertFromRaw(JSON.parse(this.props.currentNote.content))
+
 
 class MyEditor extends Component {
   constructor (props) {
