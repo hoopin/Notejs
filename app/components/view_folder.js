@@ -7,7 +7,8 @@ import LinearProgress from 'material-ui/LinearProgress'
 import promiseMiddleware from 'redux-promise'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar, {muiTheme} from 'material-ui/AppBar'
-import FlatButton from 'material-ui/FlatButton'
+import RaisedButton from 'material-ui/RaisedButton'
+import TextField from 'material-ui/TextField'
 
 class ViewFolder extends Component {
 
@@ -85,14 +86,14 @@ class ViewFolder extends Component {
   render () {
     return (
       <div>
-        <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={ <form onSubmit={this.onHandleSubmit}>
-          <input
-            type='text'
-            placeholder='new note name'
+        <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={<form className='inputForm' onSubmit={this.onHandleSubmit}>
+          <TextField
+            className='addInputField'
+            placeholder='Create new note'
             value={this.state.newName}
             onChange={this.handleName}
           />
-          <input type='submit' value='Create New Note' />
+          <RaisedButton label='Submit' type='submit' />
         </form>} />
         <div>{ this.renderFolder() }</div>
       </div>

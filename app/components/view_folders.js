@@ -4,7 +4,8 @@ import { fetchFolders, createFolder } from '../actions/action_folder'
 import { Link } from 'react-router'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar, {muiTheme} from 'material-ui/AppBar'
-import FlatButton from 'material-ui/FlatButton'
+import RaisedButton from 'material-ui/RaisedButton'
+import TextField from 'material-ui/TextField'
 
 class ViewFolders extends Component {
 
@@ -79,13 +80,13 @@ class ViewFolders extends Component {
     return (
       <div>
         <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={<form onSubmit={this.onHandleSubmit}>
-          <input
-            type='text'
-            placeholder='new folder name'
+          <TextField
+            className='addInputField'
+            placeholder='Create new folder'
             value={this.state.newName}
             onChange={this.handleName}
           />
-          <input type='submit' value='Create New Folder' />
+          <RaisedButton label='Submit' type='submit' />
         </form>} />
         <div>{ this.renderFolders() }</div>
       </div>

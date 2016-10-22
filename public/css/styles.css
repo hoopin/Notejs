@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Inconsolata|PT+Sans');
+/*font-family: 'PT Sans', sans-serif;
+font-family: 'Cormorant Garamond', serif;
+font-family: 'Inconsolata', monospace;*/
+
 body {
   background-color: #DADADA;
 }
@@ -9,6 +14,31 @@ body {
 .authButtons {
   color: white !important;
   margin-top: 5px !important;
+}
+
+.title {
+  font-size: 90px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  color: white;
+}
+
+.tagline {
+  font-size: 45px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  color: white;
+  margin-top: 90px;
+}
+
+.background {
+  margin-top: -20px;
+  background: url('../images/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 90.5%;
 }
 
 .authButtons:hover {
@@ -102,6 +132,25 @@ body {
 }
 
 .editNoteBlock {
-  padding: 10px;
-  border: solid 1px black;
+  padding: 10px !important;
+  border: solid 1px black !important;
+}
+
+.addInputField {
+  background-color: white !important;
+  padding: 10px !important;
+  margin: 0 !important;
+  margin-right: 40px !important;
+  border-radius: 3px !important;
+}
+
+.addInputField div hr {
+  width: 92% !important;
+}
+
+.inputForm {
+  max-height: 50px;
+  position: relative;
+  margin: 0 !important;
+  display: block;
 }
