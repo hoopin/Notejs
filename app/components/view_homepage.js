@@ -9,12 +9,19 @@ class HomePage extends Component {
     return (
       <div>
         <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={<span><FlatButton label='Login' className='authButtons' /> <FlatButton label='Signup' className='authButtons' /></span>} />
-        <Link to='folders'> render folders</Link>
-        <div>
-          <Link to='signup'> sign up</Link>
-        </div>
-        <div>
-          <Link to='signin'> sign in</Link>
+        <div className='background'>
+          <Link to='folders'> render folders</Link>
+          <div>
+            <Link to='signup'> sign up</Link>
+          </div>
+          <div>
+            <Link to='signin'> sign in</Link>
+          </div>
+
+          <div>
+            <h1 className='title'><strong>NoteJS</strong></h1>
+            <h3 className='tagline'>The premier free note taking app for <strong>developers</strong></h3>
+          </div>
         </div>
       </div>
     )
