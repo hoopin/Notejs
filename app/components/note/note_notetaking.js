@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import {Editor, EditorState, RichUtils, convertToRaw, convertFromRaw} from 'draft-js'
-// import styles from './style.css'
+import { connect } from 'react-redux'
+import { Editor, EditorState, RichUtils, convertToRaw, convertFromRaw } from 'draft-js'
 
 class MyEditor extends Component {
   constructor (props) {
@@ -9,12 +9,19 @@ class MyEditor extends Component {
     this.onChange = (editorState) => this.setState({editorState})
   }
   componentWillMount () {
+    // this.props.fetchNote(this.props.params.id)
     // console.log('EDITING note id:', this.props.params.id)
     // console.log('this.props.noteData:', this.props)
   }
-  _createContent () {
-    let content = convertToRaw(this.state.editorState.getCurrentContent())
-    console.log(content)
+  _saveContent () {
+    let noteId = this.props.idData
+    let content = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()))
+    let saveObj = {id: noteId,
+    content: content}
+    this.props.updateNoteData(saveObj)
+  }
+  _deleteNote () {
+    console.log(updateNote);
   }
   _onBoldClick () {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'))
@@ -36,7 +43,8 @@ class MyEditor extends Component {
           <button onClick={this._onItalicClick.bind(this)}>Italic</button>
           <button>Code Block</button>
           <Editor placeholder='Type Here' editorState={this.state.editorState} onChange={this.onChange} />
-          <button onClick={this._createContent.bind(this)}>Log content</button>
+          <button onClick={this._saveContent.bind(this)}>Save</button>
+          <button onClick={this._deleteNote.bind(this)}>DELETENOTE</button>
         </div>
       </div>
     )

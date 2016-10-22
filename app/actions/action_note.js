@@ -47,10 +47,18 @@ export function createNote (props) {
   }
 }
 
-export function updateNote () {
-  const request = axios.get(``)
-  return {
-    type: UPDATE_NOTE,
-    payload: request
+export function updateNote (props) {
+  return (dispatch) => {
+    console.log('inside the update note callback', props)
+    axios.put(`/api/notes/${props.id}`, props)
+    .then((res) => {
+      dispatch({
+        type: UPDATE_NOTE,
+        payload: res.data
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 }
