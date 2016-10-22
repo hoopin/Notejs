@@ -3,43 +3,10 @@ import {Editor, EditorState, RichUtils, convertToRaw, convertFromRaw} from 'draf
 import AppBar, {muiTheme} from 'material-ui/AppBar'
 import FlatButton from 'material-ui/FlatButton'
 import { connect } from 'react-redux'
-import RaisedButton from 'material-ui/RaisedButton';
-
-const styleMap = {
-  'CODE': {
-    color: '#535353',
-    background: 'none',
-    backgroundColor: '#E4E3E4',
-    textShadow: '0 1px rgba(0, 0, 0, 0.3)',
-    fontFamily: 'monospace',
-    textAlign: 'left',
-    margin: 'none',
-    padding: '7px',
-    borderLeft: 'solid 4px #1EAAF1',
-    fontSize: '14px',
-    whiteSpace: 'pre',
-    width: '100%',
-    wordSpacing: 'normal',
-    wordBreak: 'normal',
-    wordWrap: 'normal',
-    lineHeight: 2.0,
-    hyphens: 'none'
-  },
-  'H1': {
-    fontSize: '45px'
-  },
-  'H2': {
-    fontSize: '35px'
-  },
-  'H3': {
-    fontSize: '25px'
-  }
-}
+import RaisedButton from 'material-ui/RaisedButton'
 
 // let currentNoteData = convertFromRaw(JSON.parse(this.props.currentNote.content))
 
-import RaisedButton from 'material-ui/RaisedButton';
-
 const styleMap = {
   'CODE': {
     color: '#535353',
@@ -70,7 +37,6 @@ const styleMap = {
     fontSize: '25px'
   }
 }
->>>>>>> [client-feature] - style note view and add code block functionality
 
 class MyEditor extends Component {
   constructor (props) {
