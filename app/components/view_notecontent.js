@@ -29,13 +29,13 @@ class ViewNoteContent extends Component {
     if (this.props.currentNote === null) {
       return <div>Loading Note Content</div>
     }
-    let preview = JSON.parse(this.props.currentNote.content).blocks[0].text
+    
     return (
       <div>
         <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' />
         <div className='noteView'>
           <h1> {this.props.currentNote.notesName ? this.props.currentNote.notesName : 'No name note' } </h1>
-          <div> {preview} </div>
+          <div> {this.props.currentNote.content} </div>
           <Link to={'editNote/' + this.props.params.id}> EDIT NOTE </Link>
         </div>
       </div>
