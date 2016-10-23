@@ -101,7 +101,7 @@ class ViewFolder extends Component {
   render () {
     return (
       <div>
-        <AppBar title='NoteJS' className='navbar' onTouchTap={this.handleToggle.bind(this)} iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={<form className='inputForm' onSubmit={this.onHandleSubmit}>
+        <AppBar title='NoteJS' className='navbar' onLeftIconButtonTouchTap={this.handleToggle.bind(this)} iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={<form className='inputForm' onSubmit={this.onHandleSubmit}>
           <TextField
             className='addInputField'
             placeholder='Create new note'
