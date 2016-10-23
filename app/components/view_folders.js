@@ -72,7 +72,7 @@ class ViewFolders extends Component {
     return this.props.folders.map(folder => {
       return (
         <div className='folderView'>
-          <Link to={'folders/' + folder.id} className='folder' onClick={this.onFolderClick.bind(this, folder.id)} key={folder.id}>
+          <Link to={'/folders/' + folder.id} className='folder' onClick={this.onFolderClick.bind(this, folder.id)} key={folder.id}>
           </Link>
           <br />
           <span className='folderName'><strong> {folder.folderName} </strong></span>

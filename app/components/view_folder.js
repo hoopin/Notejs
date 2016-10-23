@@ -82,7 +82,7 @@ class ViewFolder extends Component {
     }
     return this.props.currentFolder.map((note) => {
       return (
-        <Link to={'notes/' + note.id} className='note' onClick={this.onFolderClick.bind(this, note.id)} key={note.id}>
+        <Link to={'/notes/' + note.id} className='note' onClick={this.onFolderClick.bind(this, note.id)} key={note.id}>
           <strong> {note.notesName ? note.notesName : 'No name note'} </strong>
         </Link>
       )
