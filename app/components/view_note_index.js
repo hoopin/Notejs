@@ -39,7 +39,7 @@ class ViewNoteEditContent extends Component {
 
   render () {
     return (
-      <MyEditor idData={this.props.params.id} updateNoteData={this.props.updateNote} noteData={this.props.currentNote.content} deleteNoteData={this.props.deleteNote}/>
+      <MyEditor idData={this.props.params.id} updateNoteData={this.props.updateNote} noteData={this.props.currentNote.content} deleteNoteData={this.props.deleteNote} fetchNoteData={this.props.fetchNote}/>
       )
   }
 
