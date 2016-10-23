@@ -4,6 +4,7 @@ import AppBar, {muiTheme} from 'material-ui/AppBar'
 import FlatButton from 'material-ui/FlatButton'
 import { connect } from 'react-redux'
 import RaisedButton from 'material-ui/RaisedButton'
+import KeyBinding from 'react-keybinding-component'
 
 // let currentNoteData = convertFromRaw(JSON.parse(this.props.currentNote.content))
 
@@ -35,6 +36,9 @@ const styleMap = {
   },
   'H3': {
     fontSize: '25px'
+  },
+  'P': {
+    fontSize: '14px'
   }
 }
 
@@ -48,7 +52,12 @@ class MyEditor extends Component {
   componentWillMount () {
     console.log('id in component', this.props.idData)
     console.log('this.props.noteData: ', this.props.noteData)
+  }
 
+  handleKeyEvent (e) {
+    if (e === 192) {
+      this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'CODE'))
+    }
   }
 
   _saveContent () {
@@ -72,6 +81,9 @@ class MyEditor extends Component {
   }
   _onH3Click () {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'H3'))
+  }
+  _onPClick () {
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'P'))
   }
   _onBoldClick () {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'))
@@ -99,6 +111,7 @@ class MyEditor extends Component {
               <button className='noteStylingButtons' onClick={this._onH1Click.bind(this)}>H1</button>
               <button className='noteStylingButtons' onClick={this._onH2Click.bind(this)}>H2</button>
               <button className='noteStylingButtons' onClick={this._onH3Click.bind(this)}>H3</button>
+              <button className='noteStylingButtons' onClick={this._onPClick.bind(this)}>P</button>
               <button className='noteStylingButtons' onClick={this._onBoldClick.bind(this)}>B</button>
               <button className='noteStylingButtons' onClick={this._onUnderlineClick.bind(this)}>U</button>
               <button className='noteStylingButtons' onClick={this._onItalicClick.bind(this)}>I</button>
@@ -106,6 +119,7 @@ class MyEditor extends Component {
             </div>
             <br /><br />
             <Editor placeholder="What's on your mind?" className='editNoteBlock' editorState={this.state.editorState} onChange={this.onChange} customStyleMap={styleMap} />
+            <KeyBinding onKey={(e) => { handleKeyEvent(e) }} />
             <br /><br />
             <RaisedButton className='noteBottomButtons' label='Save' onClick={this._saveContent.bind(this)} />
             <RaisedButton className='noteBottomButtons' label='LogId' onClick={this.componentWillMount.bind(this)} />
