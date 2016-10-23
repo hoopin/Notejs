@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchNote } from '../actions/action_note'
 import { Link } from 'react-router'
@@ -16,8 +16,12 @@ class ViewNoteContent extends Component {
   }
 
   componentWillMount () {
+    let self = this
     this.props.fetchNote(this.props.params.id)
     console.log('rendering note:', this.props.params.id)
+    window.setTimeout(function () {
+      self.context.router.push('/editNote/' + self.props.params.id)
+    }, 150) // Won't work with < 150 for some reason
   }
 
   onNoteClick (id) {
@@ -50,6 +54,10 @@ class ViewNoteContent extends Component {
       )
   }
 
+}
+
+ViewNoteContent.contextTypes = {
+  router: PropTypes.object
 }
 
 function mapStateToProps (state) {
