@@ -46,9 +46,9 @@ class MyEditor extends Component {
   }
 
   componentWillMount () {
-    // this.props.fetchNote(this.props.params.id)
-    // console.log('EDITING note id:', this.props.params.id)
-    // console.log('this.props.noteData:', this.props)
+    console.log('id in component', this.props.idData)
+    console.log('this.props.noteData: ', this.props.noteData)
+
   }
 
   _saveContent () {
@@ -56,7 +56,7 @@ class MyEditor extends Component {
     let content = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()))
     let saveObj = {id: noteId,
     content: content}
-    // console.log("update function:", this.props.updateNoteData)
+    // console.log("update function:", componentWillMount())
     this.props.updateNoteData(saveObj)
   }
   _deleteNote () {
@@ -86,7 +86,7 @@ class MyEditor extends Component {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'ITALIC'))
   }
   render () {
-    console.log("this.props.noteData in david's", this.props.noteData)
+    // console.log("this.props.noteData in david's", this.props.noteData)
     return (
 
       <div>
@@ -108,6 +108,7 @@ class MyEditor extends Component {
             <Editor placeholder="What's on your mind?" className='editNoteBlock' editorState={this.state.editorState} onChange={this.onChange} customStyleMap={styleMap} />
             <br /><br />
             <RaisedButton className='noteBottomButtons' label='Save' onClick={this._saveContent.bind(this)} />
+            <RaisedButton className='noteBottomButtons' label='LogId' onClick={this.componentWillMount.bind(this)} />
             <RaisedButton className='noteBottomButtons' label='Delete Note' onClick={this._deleteNote.bind(this)} />
 
           </div>

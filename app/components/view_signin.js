@@ -8,7 +8,7 @@ class existingUser extends Component {
     console.log('PropTypes?!', PropTypes.object)
     this.props.fetchUser(props)
     console.log('this.context', this.context)
-    this.context.router.push('/folder')
+    this.context.router.push('/folders')
   }
 
   render () {
