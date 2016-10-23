@@ -1,11 +1,10 @@
 import React, {Component} from 'react'
-import {Editor, EditorState, RichUtils, convertToRaw, convertFromRaw} from 'draft-js'
+import {Editor, EditorState, RichUtils, ContentState, createFromBlockArray, contentBlock, convertToRaw, convertFromRaw} from 'draft-js'
 import AppBar, {muiTheme} from 'material-ui/AppBar'
 import FlatButton from 'material-ui/FlatButton'
 import { connect } from 'react-redux'
 import RaisedButton from 'material-ui/RaisedButton'
 
-// let currentNoteData = convertFromRaw(JSON.parse(this.props.currentNote.content))
 
 const styleMap = {
   'CODE': {
@@ -41,13 +40,14 @@ const styleMap = {
 class MyEditor extends Component {
   constructor (props) {
     super(props)
-    this.state = { value: '', editorState: EditorState.createEmpty() }
+    this.state = { editorState: EditorState.createWithContent(ContentState.createFromText((this.props.noteData))) }
+    //should be using EditorState.createWithContent(ContentState.createFromBlockArray(convertFromRaw(JSON.parse(this.props.noteData))))
     this.onChange = (editorState) => this.setState({editorState})
   }
 
   componentWillMount () {
-    console.log('id in component', this.props.idData)
-    console.log('this.props.noteData: ', this.props.noteData)
+    // console.log('id in component', this.props.idData)
+    // console.log('this.props.noteData: ', this.props.noteData)
 
   }
 
@@ -56,7 +56,9 @@ class MyEditor extends Component {
     let content = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()))
     let saveObj = {id: noteId,
     content: content}
-    // console.log("update function:", componentWillMount())
+    // console.log("this.props.noteData", this.props.noteData)
+    // console.log("content:", content)
+    // console.log('currentNoteData: ', currentNoteData)
     this.props.updateNoteData(saveObj)
   }
   _deleteNote () {
@@ -108,7 +110,6 @@ class MyEditor extends Component {
             <Editor placeholder="What's on your mind?" className='editNoteBlock' editorState={this.state.editorState} onChange={this.onChange} customStyleMap={styleMap} />
             <br /><br />
             <RaisedButton className='noteBottomButtons' label='Save' onClick={this._saveContent.bind(this)} />
-            <RaisedButton className='noteBottomButtons' label='LogId' onClick={this.componentWillMount.bind(this)} />
             <RaisedButton className='noteBottomButtons' label='Delete Note' onClick={this._deleteNote.bind(this)} />
 
           </div>
