@@ -20,7 +20,7 @@ class ViewNoteContent extends Component {
     this.props.fetchNote(this.props.params.id)
     window.setTimeout(function () {
       self.context.router.push('/editNote/' + self.props.params.id)
-    }, 150) // Won't work with < 150 for some reason
+    }, 350) // Won't work with < 150 for some reason
   }
 
   onNoteClick (id) {
