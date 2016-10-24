@@ -11,9 +11,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import MenuItem from 'material-ui/MenuItem'
-import Drawer from 'material-ui/Drawer';
-
-
+import Drawer from 'material-ui/Drawer'
 
 class ViewFolder extends Component {
 
@@ -48,7 +46,7 @@ class ViewFolder extends Component {
     e.preventDefault()
     this.props.createNote({
       'notesName': this.state.newName,
-      'content': 'Testing content',
+      'content': '{"entityMap":{},"blocks":[{"key":"8u19c","text":"Add some new content :)","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}]}',
       'folderId': this.props.params.id
     })
     setTimeout(() => {
@@ -89,7 +87,7 @@ class ViewFolder extends Component {
     })
   }
 
-  handleToggle(){ 
+  handleToggle(){
     this.setState({open: !this.state.open})
   }
 

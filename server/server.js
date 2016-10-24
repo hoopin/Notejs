@@ -5,7 +5,7 @@ const path = require('path')
 const cors = require('cors')
 const rootRouter = require('./routers/index')
 const session = require('express-session')
-const PORT = process.env.PORT || 8000
+const PORT = process.env.NODE_ENV || 8000
 
 const app = express()
 
