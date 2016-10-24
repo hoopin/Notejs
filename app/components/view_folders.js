@@ -47,7 +47,7 @@ class ViewFolders extends Component {
     setTimeout(() => {
       this.props.fetchFolders()
       this.renderFolders()
-    }, 600)
+    }, 750)
   }
 
   renderForm () {

@@ -93,11 +93,12 @@ class MyEditor extends Component {
 
     this.props.updateNoteData(saveObj)
     this.context.router.push('/folders')
-
   }
   _deleteNote () {
     let noteId = this.props.idData
     this.props.deleteNoteData(noteId)
+
+    this.context.router.push('/folders')
   }
   _onH1Click () {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'H1'))
