@@ -28,7 +28,7 @@ const Notes = sequelize.define('notes', {
     type: Sequelize.STRING
   },
   content: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING(2000)
   }
 }, {
   freezeTableName: true
