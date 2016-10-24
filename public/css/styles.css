@@ -18,7 +18,7 @@ body {
   border-radius: 5px;
   padding: 5px;
   border: none;
-  width: 300px;
+  width: 330px;
 }
 
 .noteStylingButtons {
@@ -28,7 +28,23 @@ body {
   border: none;
 }
 
+.noteColorButtons {
+  background-color: #272726;
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+.square {
+  padding: 5px 15px 5px 10px;
+  border-radius: 50%;
+}
+
 .noteStylingButtons:hover {
+  color: #03A9F4 !important;
+}
+
+.noteColorButtons:hover {
   color: #03A9F4 !important;
 }
 
@@ -184,4 +200,33 @@ body {
   position: relative;
   margin: 0 !important;
   display: block;
+}
+
+/* COLORS */
+.red {
+  background-color: #FC2F35;
+}
+
+.blue {
+  background-color: #2196F3;
+}
+
+.violet {
+  background-color: #673AB7;
+}
+
+.green {
+  background-color: #21B725;
+}
+
+.orange {
+  background-color: #FC5830;
+}
+
+.teal {
+  background-color: #1DE9B6;
+}
+
+.cyan {
+  background-color: #00BCD4;
 }

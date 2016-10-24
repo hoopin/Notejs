@@ -22,7 +22,7 @@ noteController.GET_NOTEID = (req, res) => {
 
 // Update a note
 noteController.UPDATE_NOTEID = (req, res) => {
-  const noteContent = req.body.content
+  const noteContent = JSON.stringify(req.body.content)
   const noteId = req.params.noteId
   Notes.updateNote(noteId, noteContent)
     .then((updatedNote) => {

@@ -2,26 +2,26 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchNote, updateNote, deleteNote } from '../actions/action_note'
 import MyEditor from './note/note_notetaking'
+import {EditorState, createWithContent, ContentState, createFromBlockArray, contentBlock, convertToRaw, convertFromRaw} from 'draft-js'
 
 class ViewNoteEditContent extends Component {
-
   constructor (props) {
     super(props)
+    const DBEditorState = convertFromRaw(JSON.parse(this.props.currentNote.content))
     this.state = {
       clicked: false
     }
+
     this.onNoteClick = this.onNoteClick.bind(this)
   }
 
   componentWillMount () {
     this.props.fetchNote(this.props.params.id)
-    console.log('editing note:', this.props.params.id)
-    console.log('this.props.currentNote.content', this.props.currentNote.content)
   }
 
   onNoteClick (id) {
     this.setState({clicked: true})
-    console.log('I am clicking Note ID: ', id)
+    console.log('I am clickng Note ID: ', id)
   }
 
   renderNote () {
@@ -32,14 +32,14 @@ class ViewNoteEditContent extends Component {
     return (
       <div>
         <h1> {this.props.currentNote.notesName ? this.props.currentNote.notesName : 'No name note' } </h1>
-        <div> {this.props.currentNote.content} </div>
+        <div> { this.state.content } </div>
       </div>
     )
   }
 
   render () {
     return (
-      <MyEditor idData={this.props.params.id} updateNoteData={this.props.updateNote} noteData={this.props.currentNote.content} deleteNoteData={this.props.deleteNote} fetchNoteData={this.props.fetchNote}/>
+      <MyEditor idData={this.props.params.id} updateNoteData={this.props.updateNote} noteData={this.props.currentNote.content} deleteNoteData={this.props.deleteNote} fetchNoteData={this.props.fetchNote} />
       )
   }
 
