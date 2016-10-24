@@ -45,9 +45,7 @@ class HomePage extends Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <MenuItem >Recent News</MenuItem>
           <MenuItem >About Us</MenuItem>
-          <MenuItem >Locations</MenuItem>
           <MenuItem >Career Opportunities</MenuItem>
           <MenuItem >Contact Us</MenuItem>
         </Drawer>

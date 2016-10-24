@@ -1,12 +1,9 @@
 import axios from 'axios'
 
-// TODO: if you think that some actions are needed or not needed
-// notify the slack group so we can discuss
 export const CREATE_USER = 'CREATE_USER'
 export const FETCH_USER = 'FETCH_USER'
 export const DELETE_USER = 'DELETE_USER'
 
-// TODO: update axios requests with backend endpoints
 export function fetchUser (props) {
   return (dispatch) => {
     console.log('inside the signin user callback', props)

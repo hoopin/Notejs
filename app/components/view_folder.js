@@ -14,7 +14,6 @@ import MenuItem from 'material-ui/MenuItem'
 import Drawer from 'material-ui/Drawer'
 
 class ViewFolder extends Component {
-
   constructor (props) {
     super(props)
     this.state = {

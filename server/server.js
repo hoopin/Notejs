@@ -22,5 +22,9 @@ app.use(session({
 app.use('/', express.static(path.join(__dirname, '../public')))
 //
 app.use('/api', rootRouter)
+app.use('*', (req, res) => {
+  app.use(express.static(path.join(__dirname, '../public')))
+  res.sendFile(path.resolve(__dirname, '../public', 'index.html'))
+})
 
 app.listen(PORT, () => console.log('Server running on port', PORT))

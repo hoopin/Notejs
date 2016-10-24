@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {Editor, EditorState, RichUtils, ContentState, createFromBlockArray, contentBlock, convertToRaw, convertFromRaw} from 'draft-js'
 import AppBar from 'material-ui/AppBar'
 import { connect } from 'react-redux'
@@ -92,6 +92,8 @@ class MyEditor extends Component {
     }
 
     this.props.updateNoteData(saveObj)
+    this.context.router.push('/folders')
+
   }
   _deleteNote () {
     let noteId = this.props.idData
@@ -189,6 +191,10 @@ class MyEditor extends Component {
       </div>
     )
   }
+}
+
+MyEditor.contextTypes = {
+  router: PropTypes.object
 }
 
 export default MyEditor

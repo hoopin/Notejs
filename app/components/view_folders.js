@@ -8,11 +8,10 @@ import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 import MenuItem from 'material-ui/MenuItem'
 import injectTapEventPlugin from 'react-tap-event-plugin'
-import Drawer from 'material-ui/Drawer';
+import Drawer from 'material-ui/Drawer'
 
 
 class ViewFolders extends Component {
-
   constructor (props) {
     super(props)
     this.state = {
@@ -49,7 +48,6 @@ class ViewFolders extends Component {
       this.props.fetchFolders()
       this.renderFolders()
     }, 600)
-    // this.setState({newName: ''})
   }
 
   renderForm () {
@@ -79,11 +77,11 @@ class ViewFolders extends Component {
     })
   }
 
-  handleToggle(){
+  handleToggle () {
     this.setState({open: !this.state.open})
   }
 
-  handleClose(){
+  handleClose () {
     this.setState({open: false})
   }
 
