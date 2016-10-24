@@ -5,12 +5,50 @@ body {
 }
 
 .navbar {
-  background-color: #03A9F4 !important;
+  background-color: #1E88E5 !important;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.noteNavbar {
+  background-color: #1E88E5 !important;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.noteNavbar button {
+  display: none !important;
+}
+
+.authForm {
+  padding: 120px;
+}
+
+.signupButton {
+  padding: 8px;
+  background-color: #1E88E5;
+  color: white;
+  margin-right: 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+.signupCancelButton {
+  padding: 10px;
+  background-color: #F44336;
+  color: white;
+  margin-right: 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+.signupCancelButton:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .authButtons {
   color: white !important;
   margin-top: 5px !important;
+  background-color: #1E88E5 !important;
 }
 
 .stylingDiv {
@@ -41,11 +79,11 @@ body {
 }
 
 .noteStylingButtons:hover {
-  color: #03A9F4 !important;
+  color: #1E88E5 !important;
 }
 
 .noteColorButtons:hover {
-  color: #03A9F4 !important;
+  color: #1E88E5 !important;
 }
 
 .noteBottomButtons {
@@ -57,7 +95,7 @@ body {
 }
 
 .noteBottomButtons button {
-  background-color: #03A9F4 !important;
+  background-color: #1E88E5 !important;
   color: white !important;
   margin-right: 15px !important;
   border-radius: 5px !important;
@@ -68,10 +106,11 @@ body {
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
   color: white;
+  margin-top: 100px;
 }
 
 .tagline {
-  font-size: 45px;
+  font-size: 55px;
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
   color: white;
@@ -93,7 +132,7 @@ body {
   background-color: white !important;
   border: solid 1px white;
   border-radius: 3px;
-  color: #1EAAF1 !important;
+  color: #1E88E5 !important;
 }
 
 .folderView {
@@ -106,7 +145,7 @@ body {
 	position:relative;
 	width:3.5em;
   margin: 50px;
-	border-bottom:1em solid #03A9F4;
+	border-bottom:1em solid #1E88E5;
 	border-right:.5em solid transparent;
 }
 
@@ -120,7 +159,7 @@ body {
 	content:"\2585"; /*this is the secret, shhhhhh*/
 	text-indent:-0.05em;
 	font-size:6em;
-	color:#03A9F4;
+	color:#1E88E5;
 	line-height:.2em;
 	position:absolute;
 	overflow:visible;
@@ -138,7 +177,7 @@ body {
 	width:3.5em;
 	top:.3em;
 	right:-3em;
-	border-bottom:1em solid #03A9F4;
+	border-bottom:1em solid #1E88E5;
 	border-left:.5em solid transparent;
 }
 

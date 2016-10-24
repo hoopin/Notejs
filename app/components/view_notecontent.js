@@ -18,7 +18,6 @@ class ViewNoteContent extends Component {
   componentWillMount () {
     let self = this
     this.props.fetchNote(this.props.params.id)
-    console.log('rendering note:', this.props.params.id)
     window.setTimeout(function () {
       self.context.router.push('/editNote/' + self.props.params.id)
     }, 150) // Won't work with < 150 for some reason
@@ -26,14 +25,13 @@ class ViewNoteContent extends Component {
 
   onNoteClick (id) {
     this.setState({clicked: true})
-    console.log('I am clicking Note ID: ', id)
   }
 
   renderNote () {
     if (this.props.currentNote === null) {
       return <div>Loading Note Content</div>
     }
-    
+
     return (
       <div>
         <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' />
@@ -61,7 +59,6 @@ ViewNoteContent.contextTypes = {
 }
 
 function mapStateToProps (state) {
-  console.log('mapStateToProps in note content:', state)
   return { currentNote: state.data.currentNote }
 }
 

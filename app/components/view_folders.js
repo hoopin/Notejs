@@ -28,7 +28,6 @@ class ViewFolders extends Component {
 
   componentWillMount () {
     this.props.fetchFolders()
-    console.log('viewing folders:', this.props.folders)
   }
 
   handleName (e) {
@@ -38,7 +37,6 @@ class ViewFolders extends Component {
 
   onFolderClick (id) {
     this.setState({clicked: true})
-    console.log('I am clicking folder ID: ', id)
   }
 
   onHandleSubmit (e) {
@@ -81,7 +79,7 @@ class ViewFolders extends Component {
     })
   }
 
-  handleToggle(){ 
+  handleToggle(){
     this.setState({open: !this.state.open})
   }
 
@@ -92,7 +90,7 @@ class ViewFolders extends Component {
   render () {
     return (
       <div>
-        <AppBar title='NoteJS' onLeftIconButtonTouchTap={this.handleToggle.bind(this)} className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={<form onSubmit={this.onHandleSubmit}> 
+        <AppBar title='NoteJS' onLeftIconButtonTouchTap={this.handleToggle.bind(this)} className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' iconElementRight={<form onSubmit={this.onHandleSubmit}>
           <TextField
             className='addInputField'
             placeholder='Create new folder'

@@ -30,7 +30,6 @@ class ViewFolder extends Component {
 
   componentWillMount () {
     this.props.fetchFolder(this.props.params.id)
-    console.log('rendering folder:', this.props.params.id)
   }
 
   handleName (e) {
@@ -39,7 +38,6 @@ class ViewFolder extends Component {
 
   onFolderClick (id) {
     this.setState({clicked: true})
-    console.log('I am clicking folder ID: ', id)
   }
 
   onHandleSubmit (e) {
@@ -53,7 +51,6 @@ class ViewFolder extends Component {
       this.props.fetchFolder(this.props.params.id)
       this.renderFolder()
     }, 300)
-    // this.setState({newName: ''})
   }
 
   renderForm () {
@@ -76,7 +73,7 @@ class ViewFolder extends Component {
 
   renderFolder () {
     if (this.props.currentFolder === null) {
-      return <LinearProgress mode="indeterminate" />
+      return <LinearProgress mode='indeterminate' />
     }
     return this.props.currentFolder.map((note) => {
       return (
@@ -87,14 +84,13 @@ class ViewFolder extends Component {
     })
   }
 
-  handleToggle(){
+  handleToggle () {
     this.setState({open: !this.state.open})
   }
 
-  handleClose(){
+  handleClose () {
     this.setState({open: false})
   }
-
 
   render () {
     return (
@@ -125,7 +121,6 @@ class ViewFolder extends Component {
       </div>
       )
   }
-
 }
 
 function mapStateToProps (state) {

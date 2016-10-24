@@ -7,7 +7,6 @@ import {EditorState, createWithContent, ContentState, createFromBlockArray, cont
 class ViewNoteEditContent extends Component {
   constructor (props) {
     super(props)
-    const DBEditorState = convertFromRaw(JSON.parse(this.props.currentNote.content))
     this.state = {
       clicked: false
     }
@@ -21,14 +20,12 @@ class ViewNoteEditContent extends Component {
 
   onNoteClick (id) {
     this.setState({clicked: true})
-    console.log('I am clickng Note ID: ', id)
   }
 
   renderNote () {
     if (this.props.currentNote === null) {
       return <div>Loading Note Content</div>
     }
-    console.log(' rendering note content in ->', this.props.currentNote)
     return (
       <div>
         <h1> {this.props.currentNote.notesName ? this.props.currentNote.notesName : 'No name note' } </h1>
@@ -46,7 +43,6 @@ class ViewNoteEditContent extends Component {
 }
 
 function mapStateToProps (state) {
-  console.log('mapStateToProps in note content:', state)
   return { currentNote: state.data.currentNote }
 }
 

@@ -5,17 +5,15 @@ import { Link } from 'react-router'
 
 class NewUser extends Component {
   onSubmit (props) {
-    console.log('PropTypes?!', PropTypes.object)
     this.props.createUser(props)
-    console.log('this.context', this.context)
     this.context.router.push('/')
   }
 
   render () {
     const { fields: { firstName, lastName, email, password }, handleSubmit } = this.props
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <h3>Sign up</h3>
+      <form  className='authForm' onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+        <h1>Sign up</h1>
 
         <div className={`form-group ${firstName.touched && firstName.invalid ? 'has-danger' : ''}`}>
           <label>First Name</label>
@@ -49,8 +47,8 @@ class NewUser extends Component {
           </div>
         </div>
 
-        <button type='submit' className='btn btn-primary'>Submit</button>
-        <Link to='/' className='btn btn-danger'>Cancel</Link>
+        <button type='submit' className='signupButton'>Submit</button>
+        <Link to='/' className='signupCancelButton'>Cancel</Link>
       </form>
     )
   }

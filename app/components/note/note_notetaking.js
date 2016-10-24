@@ -67,7 +67,6 @@ class MyEditor extends Component {
 
   constructor (props) {
     super(props)
-    console.log('this.props.noteDATA TESTING', this.props.noteData)
     const DBEditorState = convertFromRaw(JSON.parse(this.props.noteData))
     this.state = { editorState: EditorState.createWithContent(DBEditorState) }
 
@@ -81,19 +80,12 @@ class MyEditor extends Component {
   }
 
   logContent () {
-    console.log("PROPS", this.props)
-    // This gives us the converted raw state
-    let str = convertToRaw(this.state.editorState.getCurrentContent())
-    console.log(str)
-    //This gives us the content state
-    let new2 = convertFromRaw(str)
-    console.log(new2)
+    // Using this to test keybinding
   }
 
   _saveContent () {
     let noteId = this.props.idData
     let content = convertToRaw(this.state.editorState.getCurrentContent())
-    console.log('content', content)
     let saveObj = {
       id: noteId,
       content: content
@@ -103,7 +95,6 @@ class MyEditor extends Component {
   }
   _deleteNote () {
     let noteId = this.props.idData
-    // console.log("this.pro÷ps", this.props);
     this.props.deleteNoteData(noteId)
   }
   _onH1Click () {
@@ -156,11 +147,10 @@ class MyEditor extends Component {
   }
 
   render () {
-    // console.log("this.props.noteData in david's", this.props.noteData)
     return (
 
       <div>
-        <AppBar title='NoteJS' className='navbar' iconClassNameRight='muidocs-icon-navigation-expand-more' />
+        <AppBar title='NoteJS' className='noteNavbar' />
 
         <div id='content' className='noteView'>
           <div id='editor'>

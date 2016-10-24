@@ -17,7 +17,7 @@ class HomePage extends Component {
     this.state = {open: false};
   }
 
-  handleToggle(){ 
+  handleToggle(){
     this.setState({open: !this.state.open})
 }
 
@@ -54,16 +54,10 @@ class HomePage extends Component {
         </Drawer>
         <div className='background'>
           <Link to='folders'> render folders</Link>
-          <div>
-            <Link to='signup'> sign up</Link>
-          </div>
-          <div>
-            <Link to='signin'> sign in</Link>
-          </div>
 
           <div>
             <h1 className='title'><strong>NoteJS</strong></h1>
-            <h3 className='tagline'>The premier free note taking app for <strong>developers</strong></h3>
+            <h3 className='tagline'>The premier note taking app for developers</h3>
           </div>
         </div>
       </div>
