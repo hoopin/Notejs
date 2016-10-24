@@ -14,6 +14,10 @@ body {
   font-family: 'Cormorant Garamond', serif;
 }
 
+.renderFolders {
+  color: black;
+}
+
 .noteNavbar button {
   display: none !important;
 }
