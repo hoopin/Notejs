@@ -5,9 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack -d --watch",
-    "build": "webpack -p"
+    "bundle": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
