@@ -15,6 +15,9 @@
   },
   "author": "Michael Mitrakos, Chris Phan, Mike Yang, David Kim",
   "license": "ISC",
+  "engines" : {
+     "node" : "^6.2.2"
+  },
   "bugs": {
     "url": "https://github.com/Notesjs/Notejs/issues"
   },
