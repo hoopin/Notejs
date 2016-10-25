@@ -6,6 +6,11 @@ The premier note taking and note sharing app for developers. Check it out out [n
 ### Getting Started:
 All data can be accessed from the https://api.notejs.io. All data is sent and received as JSON.
 
+- Run 'npm install'
+- Run 'npm run dev'
+- Run 'npm start'.
+- Go to localhost:8000.
+
 ### Requests:
 Example API request
 
