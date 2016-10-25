@@ -68,10 +68,10 @@ Sometimes your API call will generate an error. Every response to an API call th
 
 
 ## Team:
-- [Michel Mitrakos](https://www.michaelmitrakos.com) - Scrum Master & Full-Stack Engineer
-- [Mike Yang](https://github.com/micyang) - Product Lead & Full-Stack Engineer
-- [David Kim](https://github.com/davidkim310) - Full-Stack Engineer
-- [Chris Phan](https://github.com/cpp6d) - Full-Stack Engineer
+- [Michel Mitrakos](https://www.michaelmitrakos.com) - Scrum Master & Software Engineer
+- [Mike Yang](https://github.com/micyang) - Product Lead & Software Engineer
+- [David Kim](https://github.com/davidkim310) - Software Engineer
+- [Chris Phan](https://github.com/cpp6d) - Software Engineer
 
 ## Built With:
 | Front-End      | Back-End     | Modules         | Testing Frameworks  |
