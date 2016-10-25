@@ -85,6 +85,7 @@ Sometimes your API call will generate an error. Every response to an API call th
 - Profile page
 - Track sessions and implement single user mode
 - Delete folders
+- Key binding for commands in note view (aka Cmd A for code)
 - Ability to tab in notes!
 - Allow for loading of specific note URLs
 - Organizations
