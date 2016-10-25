@@ -1,23 +1,20 @@
 # Notejs
 
-The note taking app for developers.
+The premier note taking and note sharing app for developers. Check it out out [notesjs.herokuapp.com](notesjs.herokuapp.com)
 
 ## API:
 ### Getting Started:
 All data can be accessed from the https://api.notejs.io. All data is sent and received as JSON.
 
 ### Requests:
-#### Users:
-| Request | Endpoint              | Description                     | Required data                                                 |
-| ------- |:---------------------:| :-------------------------------|:--------------------------------------------------------------|
-| POST    | /api/signup           | Post a user to the database.    | Required: name (String), password (String), password (String) |
-
+Example API request
 
   ```javascript
   $.ajax({
     url: '/api/signup',
     data: {
-      name: "Joe Bones",
+      firstName: "Joe",
+      lastName: "Bones",
       email: "exampleEmail@gmail.com",
       password: "password123"
     },
@@ -28,25 +25,30 @@ All data can be accessed from the https://api.notejs.io. All data is sent and re
   });
   ```
 
-
+#### Users:
 | Request | Endpoint              | Description                           | Required data                                    |
 | ------- |:---------------------:| :-------------------------------------|:-------------------------------------------------|
-| POST    | /api/login            | Login a user to the application       | Required: email (String), password (String)      |
-| POST    | /api/logout           | Post a user to the database.          | Required: None                                   |
-
+| POST    | /api/users/login      | Login a user to the application       | Required: email (String), password (String)      |
+| GET     | /api/users/logout     | Sign out a user                       | Required: None                                   |
+| POST    | /api/users/signup     | Post a new user to the database.      | Required: First name, Last name, Email, Password |
+| DELETE  | /api/users/delete     | Remove a user from the database.      | Required: userId (Num)                           |
 
 #### Notes:
 | Request | Endpoint              | Description                           | Required data                                    |
 | ------- |:---------------------:| :-------------------------------------|:-------------------------------------------------|
-| POST    | /api/note             | Add note to user's list of notes      | Required: note (String)                          |
-| GET     | /api/note/:noteId     | Get specific note data                | Required: None                                   |
-| DELETE  | /api/note/:noteId     | Delete note from user's note list     | Required: note (String)                          |
+| POST    | /api/notes            | Add note to user's list of notes      | Required: noteName, content, folderId (Num)      |
+| PUT     | /api/notes/:noteId    | Update a specific note                | Required: noteId (Num), content (String)         |
+| GET     | /api/notes/:noteId    | Get specific note data                | Required: None                                   |
+| DELETE  | /api/notes/:noteId    | Delete note from user's note list     | Required: noteId (Num)                           |
 
 #### Folders:
-| Request | Endpoint              | Description                           | Required data                                    |
-| ------- |:---------------------:| :-------------------------------------|:-------------------------------------------------|
-| GET     | /api/folder           | Get a list of all user's folders      | Required: None                                   |
-| GET     | /api/folder/:folderId | Get one folder with all notes         | Required: Folder (String)                        |
+| Request | Endpoint               | Description                           | Required data                                    |
+| ------- |:----------------------:| :-------------------------------------|:-------------------------------------------------|
+| POST    | /api/folders           | Get a list of all user's folders      | Required: folderName (String), userId (Num)      |
+| DELETE  | /api/folders           | Delete a specific folder              | Required: folderId (Num)                         |
+| GET     | /api/folders/:userId   | Get a list of all user's folders      | Required: userId (Num)                           |
+| GET     | /api/folders/:folderId | Get one folder with all notes         | Required: FolderId (Num)                         |
+| PUT     | /api/folders/:folderId | Rename a folder                       | Required: folderId (Num), newName (String)       |
 
 ### Errors:
 Sometimes your API call will generate an error. Every response to an API call that generates an error will include an error code, the reason for the error, and an error message to help you debug your request.
@@ -57,7 +59,7 @@ Sometimes your API call will generate an error. Every response to an API call th
 | 401   | Unauthorized    | You do not have authorization to make the request.                                               |
 | 403   | Forbidden       |                                                                                                  |
 | 404   | Not Found       | The resource you tried to locate could not be found or does not exist.                           |
-| 500   | Server Error    | An error occurred on our server.                                                                 |
+| 500   | Server Error    | An error occurred on our server. You may also get this by sending wrong data in a request.       |
 
 
 ## Team:
@@ -66,12 +68,27 @@ Sometimes your API call will generate an error. Every response to an API call th
 - [David Kim](https://github.com/davidkim310) - Full-Stack Engineer
 - [Chris Phan](https://github.com/cpp6d) - Full-Stack Engineer
 
-
 ## Built With:
 | Front-End      | Back-End     | Modules         | Testing Frameworks  |
 | -------------- |:------------:| :---------------|:--------------------|
 | React          | Node JS      | Babel           | Mocha               |
 | Redux          | Express      | BodyParser      | Chai                |
-| Webpack        | Mongo Db     | Morgan          |                     |
-| React Material |              | SQL             |                     |
-|                |              | Request         |                     |
+| Webpack        | Postgres     | Morgan          |                     |
+| React Material | Sequelize    |                 |                     |
+
+## Future Features
+- Profile page
+- Organizations
+- Note ownership
+- In-note chat
+- In-note change tracking
+- Name tagging
+- Code color scheme
+- Real-time collaborative editing
+- Payments for donations
+- About page
+- Night mode
+- Back button on each page
+- Track sessions and implement single user mode
+- Export to PDF
+- Add word previews of each note in folder view
