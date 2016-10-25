@@ -4,7 +4,7 @@ The premier note taking and note sharing app for developers. Check it out out [n
 
 ## API:
 ### Getting Started:
-All data can be accessed from the https://api.notejs.io. All data is sent and received as JSON.
+All data can be accessed from the https://notesjs.herokuapp.com/api/. All data is sent and received as JSON.
 
 - Run 'npm install'
 - Run 'npm run dev'
@@ -85,6 +85,7 @@ Sometimes your API call will generate an error. Every response to an API call th
 - Profile page
 - Track sessions and implement single user mode
 - Delete folders
+- Ability to tab in notes!
 - Allow for loading of specific note URLs
 - Organizations
 - Sign out functionality (front-end)
