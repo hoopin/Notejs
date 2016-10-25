@@ -83,7 +83,12 @@ Sometimes your API call will generate an error. Every response to an API call th
 
 ## Future Features
 - Profile page
+- Track sessions and implement single user mode
+- Delete folders
+- Allow for loading of specific note URLs
 - Organizations
+- Sign out functionality (front-end)
+- Change folder name functionality (front-end)
 - Note ownership
 - In-note chat
 - In-note change tracking
@@ -96,6 +101,5 @@ Sometimes your API call will generate an error. Every response to an API call th
 - Facebook authentication
 - Night mode
 - Back button on each page
-- Track sessions and implement single user mode
 - Export to PDF
 - Add word previews of each note in folder view
