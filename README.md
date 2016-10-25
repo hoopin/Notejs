@@ -92,6 +92,8 @@ Sometimes your API call will generate an error. Every response to an API call th
 - Real-time collaborative editing
 - Payments for donations
 - About page
+- Github authentication
+- Facebook authentication
 - Night mode
 - Back button on each page
 - Track sessions and implement single user mode
