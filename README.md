@@ -103,4 +103,3 @@ Sometimes your API call will generate an error. Every response to an API call th
 - Back button on each page
 - Export to PDF
 - Add word previews of each note in folder view
->>>>>>> dev
