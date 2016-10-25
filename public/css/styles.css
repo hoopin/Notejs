@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Inconsolata|PT+Sans');
+
+body {
+  background-color: #DADADA;
+}
+
+.navbar {
+  background-color: #1E88E5 !important;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.noteNavbar {
+  background-color: #1E88E5 !important;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.renderFolders {
+  color: black;
+}
+
+.noteNavbar button {
+  display: none !important;
+}
+
+.authForm {
+  padding: 120px;
+}
+
+.signupButton {
+  padding: 8px;
+  background-color: #1E88E5;
+  color: white;
+  margin-right: 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+.signupCancelButton {
+  padding: 10px;
+  background-color: #F44336;
+  color: white;
+  margin-right: 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+.signupCancelButton:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.authButtons {
+  color: white !important;
+  margin-top: 5px !important;
+  background-color: #1E88E5 !important;
+}
+
+.stylingDiv {
+  background-color: #272726;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  width: 330px;
+}
+
+.noteStylingButtons {
+  background-color: #272726;
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+.noteColorButtons {
+  background-color: #272726;
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+.square {
+  padding: 5px 15px 5px 10px;
+  border-radius: 50%;
+}
+
+.noteStylingButtons:hover {
+  color: #1E88E5 !important;
+}
+
+.noteColorButtons:hover {
+  color: #1E88E5 !important;
+}
+
+.noteBottomButtons {
+  margin-right: 15px !important;
+}
+
+.noteBottomButtons * {
+  color: white !important;
+}
+
+.noteBottomButtons button {
+  background-color: #1E88E5 !important;
+  color: white !important;
+  margin-right: 15px !important;
+  border-radius: 5px !important;
+}
+
+.title {
+  font-size: 90px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  color: white;
+  margin-top: 100px;
+}
+
+.tagline {
+  font-size: 55px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  color: white;
+  margin-top: 90px;
+}
+
+.background {
+  margin-top: -20px;
+  background: url('../images/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 90.5%;
+}
+
+.authButtons:hover {
+  font-weight: bold !important;
+  background-color: white !important;
+  border: solid 1px white;
+  border-radius: 3px;
+  color: #1E88E5 !important;
+}
+
+.folderView {
+  float: left;
+  display: inline-block;
+}
+
+.folder {
+	display:inline-block;
+	position:relative;
+	width:3.5em;
+  margin: 50px;
+	border-bottom:1em solid #1E88E5;
+	border-right:.5em solid transparent;
+}
+
+.folderName {
+  color: black;
+  margin-left: 48px
+}
+
+.folder:before {
+	/*middle level*/
+	content:"\2585"; /*this is the secret, shhhhhh*/
+	text-indent:-0.05em;
+	font-size:6em;
+	color:#1E88E5;
+	line-height:.2em;
+	position:absolute;
+	overflow:visible;
+	width:.87em;
+	left:.05em;
+	top:0.1em;
+	background:#fff;
+	transition:.218s ease;
+}
+
+.folder:after{
+	/*highest level*/
+  content:"";
+	position:absolute;
+	width:3.5em;
+	top:.3em;
+	right:-3em;
+	border-bottom:1em solid #1E88E5;
+	border-left:.5em solid transparent;
+}
+
+.folder:hover:before{
+	line-height:.4em;
+	top:0;
+}
+
+/* Notes */
+
+.note {
+  background-color: #fff;
+  height: 200px;
+  padding: 20px;
+  width: 150px;
+  display: inline-block;
+  position: relative;
+  margin: 30px;
+  -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, .3),
+    3px 3px 0 #fff, 4px 4px 0 rgba(0, 0, 0, .2),
+    6px 6px 0 #fff, 7px 7px 0 rgba(0, 0, 0, .1),
+    9px 9px 0 #fff, 10px 10px 0 rgba(0, 0, 0, .1);
+  -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, .3),
+    3px 3px 0 #fff, 4px 4px 0 rgba(0, 0, 0, .2),
+    6px 6px 0 #fff, 7px 7px 0 rgba(0, 0, 0, .1),
+    9px 9px 0 #fff, 10px 10px 0 rgba(0, 0, 0, .1);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, .3),
+    3px 3px 0 #fff, 4px 4px 0 rgba(0, 0, 0, .2),
+    6px 6px 0 #fff, 7px 7px 0 rgba(0, 0, 0, .1),
+    9px 9px 0 #fff, 10px 10px 0 rgba(0, 0, 0, .1);
+}
+
+.noteView {
+  height: 100%;
+  padding: 50px 100px 100px 100px;
+  margin-top: -20px;
+  background-color: white;
+}
+
+.editNoteBlock {
+  padding: 10px !important;
+  border: solid 1px black !important;
+}
+
+.addInputField {
+  background-color: white !important;
+  padding: 10px !important;
+  margin: 0 !important;
+  margin-right: 40px !important;
+  border-radius: 3px !important;
+}
+
+.addInputField div hr {
+  width: 92% !important;
+}
+
+.inputForm {
+  max-height: 50px;
+  position: relative;
+  margin: 0 !important;
+  display: block;
+}
+
+/* COLORS */
+.red {
+  background-color: #FC2F35;
+}
+
+.blue {
+  background-color: #2196F3;
+}
+
+.violet {
+  background-color: #673AB7;
+}
+
+.green {
+  background-color: #21B725;
+}
+
+.orange {
+  background-color: #FC5830;
+}
+
+.teal {
+  background-color: #1DE9B6;
+}
+
+.cyan {
+  background-color: #00BCD4;
+}

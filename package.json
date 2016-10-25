@@ -4,7 +4,9 @@
   "description": "Notejs is the premier note taking app for developers.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server/server.js",
+    "postinstall": "webpack -d",
+    "dev": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
@@ -12,23 +14,49 @@
   },
   "author": "Michael Mitrakos, Chris Phan, Mike Yang, David Kim",
   "license": "ISC",
+  "engines": {
+    "node": "^6.2.2"
+  },
   "bugs": {
     "url": "https://github.com/Notesjs/Notejs/issues"
   },
   "homepage": "https://github.com/Notesjs/Notejs#readme",
   "dependencies": {
-    "angular": "^1.5.8",
-    "angular-material": "^1.1.1",
+    "axios": "^0.15.2",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
+    "co": "^4.6.0",
     "cors": "^2.8.1",
     "dotenv": "^2.0.0",
+    "draft-js": "^0.9.1",
     "express": "^4.14.0",
+    "express-session": "^1.14.1",
     "lodash": "^4.16.4",
+    "material-ui": "^0.16.1",
     "moment": "^2.15.1",
-    "mongodb": "^2.2.10",
-    "mongoose": "^4.6.3",
     "morgan": "^1.7.0",
     "nodemon": "^1.11.0",
-    "request": "^2.75.0"
+    "path": "^0.12.7",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-keybinding-component": "^0.4.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-tap-event-plugin": "^1.0.0",
+    "redux": "^3.6.0",
+    "redux-form": "^4.1.3",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.1.0",
+    "request": "^2.75.0",
+    "sequelize": "^3.24.4",
+    "standard": "^8.4.0",
+    "webpack": "^1.13.2",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-3": "^6.17.0"
   }
 }

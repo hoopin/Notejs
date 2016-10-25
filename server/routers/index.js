@@ -1,0 +1,10 @@
+const Router = require('express').Router()
+const folders = require('./folderRouter')
+const users = require('./userRouter')
+const notes = require('./noteRouter')
+
+Router.use('/folders', folders)
+Router.use('/users', users)
+Router.use('/notes', notes)
+
+module.exports = Router
