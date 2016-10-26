@@ -1,7 +1,7 @@
 require('dotenv').config()
 const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize('postgres://' + process.env.DB_User + ':' + process.env.DB_Password + '@elmer.db.elephantsql.com:5432/' + process.env.DB_User)
+const sequelize = new Sequelize('postgres://xzdwlhli:we9KleYfJsltWzbbedRuzPV_zBHaOQ-n@elmer.db.elephantsql.com:5432/xzdwlhli')
 
 // module.exports = sequelize
 sequelize.authenticate()
