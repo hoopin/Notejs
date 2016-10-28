@@ -5,7 +5,7 @@ const path = require('path')
 const cors = require('cors')
 const rootRouter = require('./routers/index')
 const session = require('express-session')
-const PORT = process.env.PORT || 8000
+const PORT = 8000
 
 const app = express()
 
@@ -22,5 +22,9 @@ app.use(session({
 app.use('/', express.static(path.join(__dirname, '../public')))
 
 app.use('/api', rootRouter)
+
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../public/index.html'))
+})
 
 app.listen(PORT, () => console.log('Server running on port', PORT))
