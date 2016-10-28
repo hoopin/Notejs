@@ -36,6 +36,7 @@ class HomePage extends Component {
             <span>
               <FlatButton label='Sign in' className='authButtons' containerElement={<Link to='signin' />} />
               <FlatButton label='Sign up' className='authButtons' containerElement={<Link to='signup' />} />
+              <FlatButton label='Donate' className='authButtons' containerElement={<Link to='signup' />} />
             </span>
           }
         />
