@@ -22,7 +22,7 @@ const transactionPost = function (req, res) {
     submitForSettlement: true
   }
 }, function (err, result) {
-	if (result) console.log("Boom we did it!");
+	if (result) res.send(result);
 	if (err) console.log("error eith the transaction post");
 });
 };
