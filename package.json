@@ -30,6 +30,7 @@
     "babel-preset-stage-3": "^6.17.0",
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
+    "braintree": "^1.42.0",
     "co": "^4.6.0",
     "connect-ensure-login": "^0.1.1",
     "cookie-parser": "^1.4.3",
@@ -60,6 +61,7 @@
     "redux-thunk": "^2.1.0",
     "request": "^2.75.0",
     "sequelize": "^3.24.4",
+    "simplify-commerce": "^1.6.0",
     "standard": "^8.4.0",
     "webpack": "^1.13.2"
   }
