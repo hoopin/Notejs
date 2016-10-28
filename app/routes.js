@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, IndexRoute } from 'react-router'
+import { Route, IndexRoute, browserHistory } from 'react-router'
 
 import App from './components/app'
 import ViewFolder from './components/view_folder'
@@ -12,7 +12,7 @@ import ViewFolders from './components/view_folders'
 import ViewNoteContent from './components/view_notecontent'
 
 export default (
-  <Route path='/' component={App} >
+  <Route path='/' component={App} history={browserHistory} >
     <IndexRoute component={ViewHomePage} />
     <Route path='notes/:id' component={ViewNoteContent} />
     <Route path='editNote/:id' component={ViewNoteIndex} />

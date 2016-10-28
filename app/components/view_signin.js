@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 import { fetchUser } from '../actions/action_user'
+import axios from 'axios'
 import { Link } from 'react-router'
 
 class existingUser extends Component {
@@ -8,12 +9,26 @@ class existingUser extends Component {
     this.props.fetchUser(props)
     this.context.router.push('/folders')
   }
+  // onClick(){
+  //   console.log('i was clicked');
+  //   axios({
+  //     method: 'get',
+  //     url: '/login/facebook'
+  //   })
+  //   .then(function(resp){
+  //     console.log('i reached it on the front end');
+  //   })
+
+  // }
+
 
   render () {
     const { fields: { email, password }, handleSubmit } = this.props
     return (
       <form className='authForm' onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <h1>Sign In</h1>
+        <a href="/login/facebook"> Sign in through facebook</a>
+
 
         <div className={`form-group ${email.touched && email.invalid ? 'has-danger' : ''}`}>
           <label>email</label>
