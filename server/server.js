@@ -11,28 +11,28 @@ const Strategy = require('passport-facebook').Strategy
 const PORT = 8000
 
 passport.use(new Strategy({
-		clientID: '1161007270614117',
-		clientSecret: 'f3c61e55855a23372822ab1007454d0c',
-		callbackURL: 'http://localhost:8000/login/facebook/return'
+    clientID: '1161007270614117',
+    clientSecret: 'f3c61e55855a23372822ab1007454d0c',
+    callbackURL: 'http://localhost:8000/login/facebook/return'
     },
     function(accessToken, refreshToken, profile, cb) {
-    	console.log('hi im in the new strategy', profile);
+      console.log('hi im in the new strategy', profile);
       User.create({
         email: profile.displayName,
         password: profile.id
       });
 
-    	return cb(null,profile);
+      return cb(null,profile);
     }
 ));
 
 
 passport.serializeUser(function(user,cb){
-	cb(null,user);
+  cb(null,user);
 });
 
 passport.deserializeUser(function(obj, cb) {
-	cb(null,obj);
+  cb(null,obj);
 });
 
 
@@ -55,17 +55,17 @@ app.get('/login/facebook',
 ));
 
 app.get('/login/facebook/return',passport.authenticate('facebook'), function(req,res){
-	res.redirect('/folders');
+  res.redirect('/folders');
 })
 // app.get('/folders',function(req,res){
-// 	res.send('i am in folderse backend');
+//  res.send('i am in folderse backend');
 // })
 app.use('/', express.static(path.join(__dirname, '../public')))
 
 app.use('/api', rootRouter)
 
-app.get('*',function(req,res){
-	res.sendFile(path.join(__dirname,'../public/index.html'))
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 
 app.listen(PORT, () => console.log('Server running on port', PORT))
