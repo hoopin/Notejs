@@ -110,7 +110,7 @@ body {
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
   color: white;
-  margin-top: 100px;
+  padding-top: 200px;
 }
 
 .tagline {
@@ -128,7 +128,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 90.5%;
+  height: 100%;
 }
 
 .authButtons:hover {
@@ -314,7 +314,7 @@ h1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: #EEE;
+  background-color: #FFF;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -622,4 +622,21 @@ Animations
 
 .form-container {
     border: 0px !important;
+}
+
+textarea, input { outline: none; }
+
+section#folders-nav {
+    display: inline-block;
+    position: relative;
+    top: 14px;
+    right: 20px;
+}
+
+.navbar button {
+    display: none !important;
+}
+
+span#tittle {
+    cursor: pointer;
 }
