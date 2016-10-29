@@ -4,3 +4,4 @@ DS_Store
 public/bundle.js
 public/bundle.js.map
 npm-debug.log
+server/db/db.js
