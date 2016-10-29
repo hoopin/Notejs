@@ -8,7 +8,7 @@ const session = require('express-session')
 const passport = require('passport')
 const User = require('./db/db').Users
 const Strategy = require('passport-facebook').Strategy
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 
 passport.use(new Strategy({
     clientID: '1161007270614117',
