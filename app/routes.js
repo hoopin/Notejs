@@ -23,7 +23,7 @@ export default (
         <Route path='signin' component={ViewSignIn} />
         <Route path='all' component={ViewAllFiles} />
         <Route path='payment' component={Payment} />
-        <Route path='paymentInput' component={paymentInput} />
+        <Route path='donate' component={paymentInput} />
       </Route>
       <Route path='folders' component={ViewFolders} />
       <Route path='folders/:id' component={ViewFolder} />
