@@ -691,3 +691,8 @@ section#folders-nav {
 span#tittle {
     cursor: pointer;
 }
+
+.navbar {
+    margin-bottom: 0px;
+}
+

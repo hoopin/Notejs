@@ -19,7 +19,6 @@ export default (
         <IndexRoute component={ViewHomePage} />
         <Route path='notes/:id' component={ViewNoteContent} />
         <Route path='editNote/:id' component={ViewNoteIndex} />
-        <Route path='folders/:id' component={ViewFolder} />
         <Route path='signup' component={ViewSignUp} />
         <Route path='signin' component={ViewSignIn} />
         <Route path='all' component={ViewAllFiles} />
@@ -27,5 +26,6 @@ export default (
         <Route path='paymentInput' component={paymentInput} />
       </Route>
       <Route path='folders' component={ViewFolders} />
+      <Route path='folders/:id' component={ViewFolder} />
     </Router>
 )
