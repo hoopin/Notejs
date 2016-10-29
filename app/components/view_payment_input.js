@@ -17,14 +17,22 @@ class PaymentInput extends Component {
         this.setState({amount: newValue});
         console.log(this.state.amount)
     }
+
+    handleSubmit(){
+      const amount = document.getElementById("donattion-input").value;
+      localStorage.setItem("donation", amount)
+      browserHistory.push("/payment")
+    }
+
   render () {
     return (
       <div className="row donate">
           <div className="text-center col-lg-12 donate-text">
           <h1 className="text-center">Help support our "Noters"</h1>
           <p>Your donatations help keep the Notejs team working away like little worker bees. Buzz buzz. Buzz buzz.</p>
-          <form className="donation-form">
-            <CurrencyInput value={this.state.amount} onChange={this.handleChange}/>
+          <form className="donation-form" onSubmit={this.handleSubmit}>
+            <CurrencyInput id="donattion-input" value={this.state.amount} onChange={this.handleChange}/>
+            <input type="submit" />
           </form>
         </div>
         <div className='contain'>

@@ -1049,5 +1049,19 @@ span#tittle {
 
 .donation-form input {
     padding: 5px;
-    border: #F5CC69 solid 5px;
 }
+
+input[type="submit"] {
+    display: block;
+    width: 150px;
+    margin: auto;
+    border: none;
+    margin-top: 20px;
+    background: #F5CC69;
+    border-radius: 90px;
+}
+
+.form-container {
+    padding-top: 150px;
+}
+>>>>>>> payment

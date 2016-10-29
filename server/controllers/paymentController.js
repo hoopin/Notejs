@@ -15,8 +15,10 @@ const clientTokenGET = function (req, res) {
 
 const transactionPost = function (req, res) {
   var nonceFromTheClient = req.body.payload.nonce;
+  var amount = req.body.amount;
+  console.log(amount,"this is amount on the backend")
   gateway.transaction.sale({
-  amount: "10.00",
+  amount: amount,
   paymentMethodNonce: `${nonceFromTheClient}`,
   options: {
     submitForSettlement: true
