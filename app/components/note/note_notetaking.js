@@ -209,7 +209,7 @@ class MyEditor extends Component {
             <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
               {autoSave}
             </ReactCSSTransitionGroup>
-            <RaisedButton className='noteBottomButtons' label='Save' onClick={this._saveContent.bind(this)} />
+            <RaisedButton className='noteBottomButtons' label='Back' onClick={this._saveContent.bind(this)} />
             <RaisedButton className='noteBottomButtons' label='Delete Note' onClick={this._deleteNote.bind(this)} />
             </div>
           </div>

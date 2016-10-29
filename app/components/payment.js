@@ -18,7 +18,8 @@ class Payment extends Component {
   }
 
   componentDidMount(){
-    let that = this;
+    const amount = localStorage.getItem("donation"); 
+    const that = this;
     var form = document.querySelector('#my-sample-form');
     var submit = document.querySelector('input[type="submit"]');
     axios.get("/api/payments/client_token").
@@ -126,6 +127,7 @@ class Payment extends Component {
               }
               axios.post('/api/payments/nonce', {
                 payload: payload,
+                amount: amount,
               })
               .then(function (response) {
                 console.log(response);
