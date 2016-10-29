@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 import { fetchUser } from '../actions/action_user'
+import IconButton from 'material-ui/IconButton'
+import RaisedButton from 'material-ui/RaisedButton';
 import axios from 'axios'
 import { Link } from 'react-router'
 
@@ -27,7 +29,7 @@ class existingUser extends Component {
     return (
       <form className='authForm' onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <h1>Sign In</h1>
-        <a href="/login/facebook"> Sign in through facebook</a>
+        <a href="/login/facebook"><img height="50" width="210" src="./images/facebook-login-button.png" /></a>
 
 
         <div className={`form-group ${email.touched && email.invalid ? 'has-danger' : ''}`}>
