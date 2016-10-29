@@ -153,8 +153,6 @@ class MyEditor extends Component {
     return (
 
       <div>
-        <AppBar title='NoteJS' className='noteNavbar' />
-
         <div id='content' className='noteView'>
           <div id='editor'>
 
