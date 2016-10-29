@@ -35,7 +35,6 @@ passport.deserializeUser(function(obj, cb) {
   cb(null,obj);
 });
 
-
 const app = express()
 
 app.use(logger('dev'))
